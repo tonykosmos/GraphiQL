@@ -41,6 +41,9 @@
     }
   },
   "lint-staged": {
-    "*": "prettier --write"
+    "**/*.{ts,tsx}": [
+      "npm run lint:fix",
+      "npm run format:fix"
+    ]
   }
 }
