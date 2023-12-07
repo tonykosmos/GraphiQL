@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Root from './root';
-import ErrorRoute from './error';
-import Main from './main';
+import Root from './Root';
+import ErrorRoute from './ErrorRoute';
+import Main from './Main';
 
 const routerConfig = [
   {
