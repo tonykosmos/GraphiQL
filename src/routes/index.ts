@@ -1,2 +1,1 @@
-import PathRouter from './routes';
-export default PathRouter;
+export { PathRouter } from './routes';

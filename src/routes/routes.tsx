@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Root from './Root';
-import ErrorRoute from './ErrorRoute';
-import Main from './Main';
+import { Root } from './Root';
+import { ErrorRoute } from './ErrorRoute';
+import { Main } from './Main';
 
 const routerConfig = [
   {
@@ -12,7 +12,7 @@ const routerConfig = [
   },
 ];
 
-export default function PathRouter() {
+export function PathRouter() {
   const router = createBrowserRouter(routerConfig);
   return <RouterProvider router={router} />;
 }

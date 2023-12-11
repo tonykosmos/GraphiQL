@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-export default function Root() {
+export function Root() {
   return (
     <div>
       <h1>Header</h1>
