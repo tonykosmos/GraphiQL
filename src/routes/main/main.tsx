@@ -1,3 +1,6 @@
+import { useLanguage } from '../../utils/context';
+
 export function Main() {
-  return <h1>Main Page</h1>;
+  const { dictionary } = useLanguage();
+  return <h1>{dictionary.mainHere}</h1>;
 }
