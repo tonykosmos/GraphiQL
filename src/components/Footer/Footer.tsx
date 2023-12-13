@@ -4,7 +4,7 @@ import style from './Footer.module.css';
 export function Footer() {
   const { dictionary } = useLanguage();
   return (
-    <div className={style.footerContainer}>
+    <footer className={style.footerContainer}>
       <div className={style.logo}>
         <a className={style.link} href="https://rs.school/react" target="blank">
           <img
@@ -31,6 +31,6 @@ export function Footer() {
           {dictionary.gobrik}
         </a>
       </div>
-    </div>
+    </footer>
   );
 }
