@@ -1,0 +1,29 @@
+.footerContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.logo {
+  display: block;
+  margin-right: 2.5rem;
+  margin-left: 2.5rem;
+}
+.year {
+  display: block;
+  margin-right: 2.5rem;
+  margin-left: 2.5rem;
+}
+.authorsContainer {
+  display: flex;
+  margin-right: 2.5rem;
+  margin-left: 2.5rem;
+  gap: 1rem;
+}
+.link {
+  display: inline;
+  color: var(--main-font-color);
+  text-decoration: none;
+}
+.link:hover {
+  color: var(--main-font-hover-color);
+}
