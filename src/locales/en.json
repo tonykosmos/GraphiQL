@@ -3,5 +3,5 @@
   "mainHere": "Main",
   "footerHere": "Footer",
   "changeLanguage": "Change language",
-  "oops": "Oops!"
+  "errorRoute": "Oops!"
 }

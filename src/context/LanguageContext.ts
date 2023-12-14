@@ -1,16 +1,14 @@
-import { LanguageDictionary } from '../../locales/index';
-import { createContext, useContext } from 'react';
+import { LanguageDictionary } from '../locales/index';
+import { createContext } from 'react';
 
-interface LanguageContextType {
+type LanguageContextType = {
   userLanguage: string;
   userLanguageChange: (userLanguage: string) => void;
   dictionary: LanguageDictionary;
-}
+};
 
 export const LanguageContext = createContext<LanguageContextType>({
   userLanguage: 'en',
   userLanguageChange: () => {},
   dictionary: {},
 });
-
-export const useLanguage = () => useContext(LanguageContext);

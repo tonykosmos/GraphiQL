@@ -8,5 +8,5 @@ export type LanguageDictionary = {
 export const dictionaryList: { [key: string]: LanguageDictionary } = { en, ru };
 export const languageOptions = {
   en: 'English',
-  ru: 'Russian',
+  ru: 'Русский',
 };

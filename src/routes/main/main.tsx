@@ -1,4 +1,4 @@
-import { useLanguage } from '../../utils/context';
+import { useLanguage } from '../../hooks';
 
 export function Main() {
   const { dictionary } = useLanguage();

@@ -1,5 +1,5 @@
 import { languageOptions } from '../../locales';
-import { useLanguage } from '../../utils/context';
+import { useLanguage } from '../../hooks';
 
 export function LanguageSelector() {
   const { userLanguage, userLanguageChange } = useLanguage();

@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { useLanguage } from '../../utils/context';
+import { useLanguage } from '../../hooks';
 import { LanguageSelector } from '../../components/LanguageSelector';
 
 export function Root() {
