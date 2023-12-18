@@ -18,6 +18,8 @@
   align-self: center;
   margin-right: 2.5rem;
   margin-left: 2.5rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 .authorsContainer {
   display: flex;

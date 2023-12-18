@@ -11,7 +11,7 @@ export function Footer() {
           <img src={logo} alt={dictionary.logoCourse} width={100} />
         </a>
       </div>
-      <div className={style.year}>2023</div>
+      <p className={style.year}>2023</p>
       <div className={style.authorsContainer}>
         {dictionary.authors}:
         <a
