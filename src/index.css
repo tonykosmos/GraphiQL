@@ -3,7 +3,8 @@
 
   --main-font-color: #ffffff;
   --main-font-hover-color: #b0b0b0;
-  --main-bg-color: #242424;
+  --main-bg-color: #09161c;
+  --footer-bg-color: #222d33;
 
   color: var(--main-font-color);
   background-color: var(--main-bg-color);

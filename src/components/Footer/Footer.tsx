@@ -1,5 +1,6 @@
 import { useLanguage } from '../../hooks';
 import style from './Footer.module.css';
+import logo from '../../assets/rs_school_logo.svg';
 
 export function Footer() {
   const { dictionary } = useLanguage();
@@ -7,10 +8,7 @@ export function Footer() {
     <footer className={style.footerContainer}>
       <div className={style.logo}>
         <a className={style.link} href="https://rs.school/react" target="blank">
-          <img
-            src="https://rs.school/images/rs_school_js.svg"
-            alt={dictionary.logoCourse}
-          />
+          <img src={logo} alt={dictionary.logoCourse} width={100} />
         </a>
       </div>
       <div className={style.year}>2023</div>

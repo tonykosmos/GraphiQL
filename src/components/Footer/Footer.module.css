@@ -2,19 +2,26 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 0.5rem;
+  background-color: var(--footer-bg-color);
 }
 .logo {
   display: block;
   margin-right: 2.5rem;
   margin-left: 2.5rem;
 }
+.logo > .link > img{
+  vertical-align: middle;
+} 
 .year {
   display: block;
+  align-self: center;
   margin-right: 2.5rem;
   margin-left: 2.5rem;
 }
 .authorsContainer {
   display: flex;
+  align-self: center;
   margin-right: 2.5rem;
   margin-left: 2.5rem;
   gap: 1rem;
