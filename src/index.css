@@ -6,6 +6,9 @@
   --main-bg-color: #09161c;
   --footer-bg-color: #222d33;
 
+  --header-bg-color: #3a464d;
+  --header-small-bg-color: #222d33;
+
   color: var(--main-font-color);
   background-color: var(--main-bg-color);
 
@@ -17,4 +20,5 @@
 
 body {
   margin: 0;
+  position: relative;
 }
