@@ -8,7 +8,7 @@ export function Footer() {
     <footer className={style.footerContainer}>
       <div className={style.logo}>
         <a className={style.link} href="https://rs.school/react" target="blank">
-          <img src={logo} alt={dictionary.logoCourse} width={100} />
+          <img src={logo} alt={dictionary.logoCourse} />
         </a>
       </div>
       <p className={style.year}>2023</p>

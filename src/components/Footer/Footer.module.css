@@ -12,6 +12,7 @@
 }
 .logo > .link > img {
   vertical-align: middle;
+  width: 100px;
 }
 .year {
   display: block;
