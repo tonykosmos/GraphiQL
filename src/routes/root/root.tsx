@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { useLanguage } from '../../hooks';
 import { LanguageSelector } from '../../components/LanguageSelector';
+import { Footer } from '../../components/Footer';
 
 export function Root() {
   const { dictionary } = useLanguage();
@@ -11,7 +12,7 @@ export function Root() {
       <div>
         <Outlet />
       </div>
-      <h1>{dictionary.footerHere}</h1>
+      <Footer />
     </div>
   );
 }

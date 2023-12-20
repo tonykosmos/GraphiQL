@@ -1,0 +1,39 @@
+.footerContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0.5rem;
+  background-color: var(--footer-bg-color);
+}
+.logo {
+  display: block;
+  margin-right: 2.5rem;
+  margin-left: 2.5rem;
+}
+.logo > .link > img {
+  vertical-align: middle;
+  width: 100px;
+}
+.year {
+  display: block;
+  align-self: center;
+  margin-right: 2.5rem;
+  margin-left: 2.5rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.authorsContainer {
+  display: flex;
+  align-self: center;
+  margin-right: 2.5rem;
+  margin-left: 2.5rem;
+  gap: 1rem;
+}
+.link {
+  display: inline;
+  color: var(--main-font-color);
+  text-decoration: none;
+}
+.link:hover {
+  color: var(--main-font-hover-color);
+}

@@ -8,9 +8,9 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const provider = {
     userLanguage,
     dictionary: dictionaryList[userLanguage],
-    userLanguageChange: (selected: string) => {
-      setUserLanguage(selected);
-      localStorage.setItem('language', selected);
+    userLanguageChange: (selectedLanguage: string) => {
+      setUserLanguage(selectedLanguage);
+      localStorage.setItem('language', selectedLanguage);
     },
   };
   return (

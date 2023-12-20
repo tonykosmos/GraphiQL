@@ -1,7 +1,10 @@
 {
   "headerHere": "Header",
   "mainHere": "Main",
-  "footerHere": "Footer",
   "changeLanguage": "Change language",
-  "errorRoute": "Oops!"
+  "errorRoute": "Oops!",
+  "logoCourse": "Logo course",
+  "authors": "Authors",
+  "kosmovsky": "Anton Kosmovsky",
+  "gobrik": "Oleg Gobrik"
 }

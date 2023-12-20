@@ -1,7 +1,10 @@
 {
   "headerHere": "Здесь заголовок",
   "mainHere": "Здесь основная страница",
-  "footerHere": "Здесь нижняя сноска",
   "changeLanguage": "Изменить язык",
-  "errorRoute": "Упс!"
+  "errorRoute": "Упс!",
+  "logoCourse": "Логотип курса",
+  "authors": "Авторы",
+  "kosmovsky": "Антон Космовский",
+  "gobrik": "Олег Гобрик"
 }
