@@ -27,7 +27,7 @@
   padding: 1rem;
   gap: 1rem;
 }
-.sticky {
+.reducedHeader {
   background-color: var(--header-small-bg-color);
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;

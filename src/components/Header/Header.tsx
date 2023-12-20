@@ -10,7 +10,7 @@ export function Header() {
   return (
     <header
       className={`${style.headerContainer} ${
-        scrollPosition > 0 ? style.sticky : ''
+        scrollPosition > 0 ? style.reducedHeader : ''
       }`}
     >
       {/* TODO: Add link to the Welcome page */}
