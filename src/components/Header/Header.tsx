@@ -1,33 +1,19 @@
 import { useLanguage } from '../../hooks';
 import { LanguageSelector } from '../LanguageSelector';
 import style from './Header.module.css';
-import { useClientRect } from '../../hooks';
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useScrollPosition } from '../../hooks';
 
 export function Header() {
   const { dictionary } = useLanguage();
-
-  const headerRef = useRef<HTMLElement>(null);
-  const rect = useClientRect<HTMLElement>(headerRef);
-  const [stickyHeader, setStickyHeader] = useState<boolean>(false);
-
-  const handleStickyHeader = (elHeight: number) => {
-    if (window.scrollY > elHeight) {
-      setStickyHeader(true);
-    } else {
-      setStickyHeader(false);
-    }
-  };
-
-  useLayoutEffect(() => {
-    handleStickyHeader(rect.height);
-  }, [rect]);
+  const scrollPosition = useScrollPosition();
 
   return (
     <header
-      className={`${style.headerContainer} ${stickyHeader ? style.sticky : ''}`}
-      ref={headerRef}
+      className={`${style.headerContainer} ${
+        scrollPosition > 0 ? style.sticky : ''
+      }`}
     >
+      {/* TODO: Add link to the Welcome page */}
       <a href="#" className={style.logoContainer}>
         <img
           src="graphql.svg"
@@ -38,6 +24,7 @@ export function Header() {
       </a>
       <div className={style.controlContainer}>
         <LanguageSelector />
+        {/* TODO: Change name button with logic 'Sign In'/'Sign Out' */}
         <button>{dictionary.sign}</button>
       </div>
     </header>
