@@ -5,19 +5,6 @@ export function Main() {
   return (
     <div>
       <h1>{dictionary.mainHere}</h1>
-      <h1>{dictionary.mainHere}</h1>
-      <h1>{dictionary.mainHere}</h1>
-      <h1>{dictionary.mainHere}</h1>
-      <h1>{dictionary.mainHere}</h1>
-      <h1>{dictionary.mainHere}</h1>
-      <h1>{dictionary.mainHere}</h1>
-      <h1>{dictionary.mainHere}</h1>
-      <h1>{dictionary.mainHere}</h1>
-      <h1>{dictionary.mainHere}</h1>
-      <h1>{dictionary.mainHere}</h1>
-      <h1>{dictionary.mainHere}</h1>
-      <h1>{dictionary.mainHere}</h1>
-      <h1>{dictionary.mainHere}</h1>
     </div>
   );
 }
