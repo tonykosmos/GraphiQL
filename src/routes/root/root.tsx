@@ -16,7 +16,6 @@ export function Root() {
     if (!user) {
       navigate('/welcome');
     }
-    // require to add navigate (???)
   }, [user, loading, navigate]);
   return (
     <div>

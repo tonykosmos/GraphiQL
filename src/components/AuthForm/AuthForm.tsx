@@ -19,19 +19,17 @@ export function AuthForm() {
   const { dictionary } = useLanguage();
 
   const LogIn = (values: logInFields) => {
-    try {
-      signInWithEmailAndPassword(auth, values.email, values.password).then(
-        (res) => {
-          if (res.user) {
-            navigate('/');
-          }
+    signInWithEmailAndPassword(auth, values.email, values.password)
+      .then((res) => {
+        if (res.user) {
+          navigate('/');
         }
-      );
-    } catch (err) {
-      if (err.message === 'Firebase: Error (auth/invalid-credential).') {
-        alert('Invalid credentials');
-      }
-    }
+      })
+      .catch((err) => {
+        if (err.message === 'Firebase: Error (auth/invalid-credential).') {
+          alert(dictionary.invalidCredentials);
+        }
+      });
   };
 
   function onSubmit(values: logInFields) {
@@ -44,7 +42,7 @@ export function AuthForm() {
     <div className={classes.formContainer}>
       <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="email">
-          Email:
+          {dictionary.email}:
           <input
             type="text"
             className={classes.formInput}
@@ -59,7 +57,7 @@ export function AuthForm() {
         </label>
         <label htmlFor="password">
           <div className={classes.spaceBetween}>
-            <div>Password</div>
+            <div>{dictionary.password}</div>
           </div>
           <input
             type="password"

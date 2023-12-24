@@ -33,7 +33,7 @@ export function SignUpForm() {
     <div className={classes.formContainer}>
       <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="email">
-          Email:
+          {dictionary.email}:
           <input
             type="text"
             className={classes.formInput}
@@ -48,7 +48,7 @@ export function SignUpForm() {
         </label>
         <label htmlFor="password">
           <div className={classes.spaceBetween}>
-            <div>Password</div>
+            <div>{dictionary.password}</div>
           </div>
           <input
             type="password"
@@ -65,7 +65,7 @@ export function SignUpForm() {
           )}
         </label>
         <label htmlFor="confirmPassword">
-          Confirm password:
+          {dictionary.confirmPassword}:
           <input
             type="password"
             className={classes.formInput}

@@ -12,5 +12,9 @@
   "welcomeToGraphiqlApp": "Welcome to GraphiQL App",
   "logIn": "Log in",
   "signUp": "Sign up",
-  "logOut": "Log out"
+  "logOut": "Log out",
+  "invalidCredentials": "Invalid credentials",
+  "email": "Email",
+  "password": "Password",
+  "confirmPassword": "Confirm password"
 }

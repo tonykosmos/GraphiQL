@@ -12,5 +12,9 @@
   "welcomeToGraphiqlApp": "Добро пожаловать в приложение GraphiQL",
   "logIn": "Войти",
   "signUp": "Зарегистрироваться",
-  "logOut": "Выйти"
+  "logOut": "Выйти",
+  "invalidCredentials": "Неправильные почта или пароль",
+  "email": "Почта",
+  "password": "Пароль",
+  "confirmPassword": "Подтвердите пароль"
 }

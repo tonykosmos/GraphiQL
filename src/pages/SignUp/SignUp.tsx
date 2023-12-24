@@ -15,7 +15,6 @@ export function SignUp() {
     if (user) {
       navigate('/');
     }
-    // require to add navigate (???)
   }, [user, loading, navigate]);
 
   return <SignUpForm />;

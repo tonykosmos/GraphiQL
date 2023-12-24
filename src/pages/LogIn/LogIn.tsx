@@ -15,7 +15,6 @@ export function LogIn() {
     if (user) {
       navigate('/');
     }
-    // require to add navigate (???)
   }, [user, loading, navigate]);
 
   return <AuthForm />;

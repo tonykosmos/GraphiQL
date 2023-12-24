@@ -12,8 +12,6 @@ export function Header() {
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
 
-  console.log(user, loading);
-
   const doLogOut = () => {
     logout();
   };
@@ -43,14 +41,6 @@ export function Header() {
       </a>
       <div className={style.controlContainer}>
         <LanguageSelector />
-        {user ? (
-          <button onClick={doLogOut}>{dictionary.logOut}</button>
-        ) : (
-          <div className="flex">
-            <button onClick={goToLogInPage}>{dictionary.logIn}</button>
-            <button onClick={goToSignUpPage}>{dictionary.signUp}</button>
-          </div>
-        )}
         {loading ? (
           ''
         ) : user ? (

@@ -16,7 +16,6 @@ export function Welcome() {
     if (user) {
       navigate('/');
     }
-    // require to add navigate (???)
   }, [user, loading, navigate]);
 
   const { dictionary } = useLanguage();
