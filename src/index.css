@@ -19,6 +19,12 @@
 }
 
 body {
+  height: 100%;
   margin: 0;
   position: relative;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
 }

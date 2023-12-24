@@ -8,5 +8,9 @@
   "sign": "Sign",
   "authors": "Authors",
   "kosmovsky": "Anton Kosmovsky",
-  "gobrik": "Oleg Gobrik"
+  "gobrik": "Oleg Gobrik",
+  "welcomeToGraphiqlApp": "Welcome to GraphiQL App",
+  "logIn": "Log in",
+  "signUp": "Sign up",
+  "logOut": "Log out"
 }
