@@ -13,7 +13,7 @@ const routerConfig = [
     errorElement: <ErrorRoute />,
     children: [
       { path: '', element: <Main /> },
-      { path: '/welcome', element: <Welcome />, errorElement: <ErrorRoute /> },
+      { path: '/welcome', element: <Welcome /> },
     ],
   },
   {
