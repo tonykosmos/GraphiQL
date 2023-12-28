@@ -1,23 +1,7 @@
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { useLanguage } from '../../hooks';
 import classes from './welcome.module.css';
-import { useNavigate } from 'react-router-dom';
-import { auth } from '../../utils/firebase';
-import { useEffect } from 'react';
 
 export function Welcome() {
-  const [user, loading] = useAuthState(auth);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (loading) {
-      return;
-    }
-    if (user) {
-      navigate('/');
-    }
-  }, [user, loading, navigate]);
-
   const { dictionary } = useLanguage();
 
   return (
