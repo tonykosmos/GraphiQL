@@ -5,9 +5,10 @@
   --main-font-hover-color: #b0b0b0;
   --main-bg-color: #09161c;
   --footer-bg-color: #222d33;
+  --error-message-color: #ff1313;
 
   --header-bg-color: #3a464d;
-  --header-small-bg-color: #222d33;
+  --header-small-bg-color: #46494b;
 
   color: var(--main-font-color);
   background-color: var(--main-bg-color);
@@ -19,6 +20,12 @@
 }
 
 body {
+  height: 100%;
   margin: 0;
   position: relative;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
 }

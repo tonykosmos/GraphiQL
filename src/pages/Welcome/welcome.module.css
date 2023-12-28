@@ -1,0 +1,28 @@
+.welcomeHeader {
+  text-align: center;
+  width: 690px;
+}
+
+.mainContainerWelcomePage {
+  width: 700px;
+}
+
+.welcomePageRoot,
+.welcomePageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+}
+
+.welcomePageBtn {
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
