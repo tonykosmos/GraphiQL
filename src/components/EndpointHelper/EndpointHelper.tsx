@@ -7,7 +7,7 @@ import {
   Typography,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import { defaultAPIRequest } from '../../constants';
+import { defaultAPIRequest } from '../../constants/defaultValues';
 import { useLanguage } from '../../hooks';
 
 export function EndpointHelper({
