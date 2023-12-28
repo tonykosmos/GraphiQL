@@ -2,19 +2,16 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Welcome } from '../pages/Welcome';
 import { SignUp } from '../pages/SignUp';
 import { LogIn } from '../pages/LogIn';
-import { Auth } from '../components/Auth';
 import { AppLayout } from './AppLayout';
 import { ErrorPage } from '../pages/ErrorPage';
 import { GraphiQLPage } from '../pages/GraphiQLPage';
+import { AuthLayout } from './AuthLayout';
+import { HeaderLayout } from './HeaderLayout/HeaderLayout';
 
 const routerConfig = [
   {
     path: '/',
-    element: (
-      <Auth>
-        <AppLayout />
-      </Auth>
-    ),
+    element: <AuthLayout />,
     errorElement: <ErrorPage />,
     children: [{ path: '', element: <GraphiQLPage /> }],
   },
@@ -26,13 +23,15 @@ const routerConfig = [
   },
   {
     path: '/signUp',
-    element: <SignUp />,
+    element: <HeaderLayout />,
     errorElement: <ErrorPage />,
+    children: [{ path: '', element: <SignUp /> }],
   },
   {
     path: '/logIn',
-    element: <LogIn />,
+    element: <HeaderLayout />,
     errorElement: <ErrorPage />,
+    children: [{ path: '', element: <LogIn /> }],
   },
 ];
 
