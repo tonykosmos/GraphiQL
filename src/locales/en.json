@@ -2,7 +2,8 @@
   "headerHere": "Header",
   "mainHere": "Main",
   "changeLanguage": "Change language",
-  "errorRoute": "Oops!",
+  "titleErrorPage": "Oops!",
+  "textErrorRoute": "The page you are looking for cannot be found",
   "logoCourse": "Logo course",
   "logoApp": "Logo app",
   "sign": "Sign",
@@ -16,5 +17,13 @@
   "invalidCredentials": "Invalid credentials",
   "email": "Email",
   "password": "Password",
-  "confirmPassword": "Confirm password"
+  "confirmPassword": "Confirm password",
+  "APIEndpoint": "API Endpoint",
+  "requestEditor": "Request Editor",
+  "responseViewer": "Response Viewer",
+  "messageAPIEndpointsList": "Message APIEndpoints List:",
+  "helpInformation": "Help information",
+  "startRequest": "Start Request",
+  "clearRequestParams": "Clear Request parameters",
+  "prettifyRequest": "Prettify Request"
 }

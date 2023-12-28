@@ -1,38 +1,38 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { Root } from './root';
-import { ErrorRoute } from './ErrorRoute';
-import { Main } from './main';
 import { Welcome } from '../pages/Welcome';
 import { SignUp } from '../pages/SignUp';
 import { LogIn } from '../pages/LogIn';
 import { Auth } from '../components/Auth';
+import { AppLayout } from './AppLayout';
+import { ErrorPage } from '../pages/ErrorPage';
+import { GraphiQLPage } from '../pages/GraphiQLPage';
 
 const routerConfig = [
   {
     path: '/',
     element: (
       <Auth>
-        <Root />
+        <AppLayout />
       </Auth>
     ),
-    errorElement: <ErrorRoute />,
-    children: [{ path: '', element: <Main /> }],
+    errorElement: <ErrorPage />,
+    children: [{ path: '', element: <GraphiQLPage /> }],
   },
   {
     path: '/welcome',
-    element: <Root />,
-    errorElement: <ErrorRoute />,
+    element: <AppLayout />,
+    errorElement: <ErrorPage />,
     children: [{ path: '', element: <Welcome /> }],
   },
   {
     path: '/signUp',
     element: <SignUp />,
-    errorElement: <ErrorRoute />,
+    errorElement: <ErrorPage />,
   },
   {
     path: '/logIn',
     element: <LogIn />,
-    errorElement: <ErrorRoute />,
+    errorElement: <ErrorPage />,
   },
 ];
 
