@@ -6,7 +6,7 @@ import { AppLayout } from './AppLayout';
 import { ErrorPage } from '../pages/ErrorPage';
 import { GraphiQLPage } from '../pages/GraphiQLPage';
 import { AuthLayout } from './AuthLayout';
-import { HeaderLayout } from './HeaderLayout/HeaderLayout';
+import { HeaderLayout } from './HeaderLayout';
 
 const routerConfig = [
   {
