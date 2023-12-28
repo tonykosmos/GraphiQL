@@ -2,7 +2,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useLanguage } from '../../hooks';
 import classes from './welcome.module.css';
 import { useNavigate } from 'react-router-dom';
-import { auth } from '../../firebase';
+import { auth } from '../../utils/firebase';
 import { useEffect } from 'react';
 
 export function Welcome() {

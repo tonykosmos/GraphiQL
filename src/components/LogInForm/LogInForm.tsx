@@ -1,14 +1,14 @@
 import { logInSchema } from '../../constants/schema';
-import classes from './AuthForm.module.css';
+import classes from './LogInForm.module.css';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../../hooks';
-import { auth } from '../../firebase';
+import { auth } from '../../utils/firebase';
 import { logInFields } from './types';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
-export function AuthForm() {
+export function LogInForm() {
   const {
     register,
     handleSubmit,
@@ -21,7 +21,7 @@ export function AuthForm() {
   const LogIn = (values: logInFields) => {
     signInWithEmailAndPassword(auth, values.email, values.password)
       .then((res) => {
-        if (res.user) {
+        if (res?.user) {
           navigate('/');
         }
       })
@@ -49,11 +49,9 @@ export function AuthForm() {
             id="email"
             {...register('email')}
           />
-          {errors.email ? (
-            <span className={classes.errorMessage}>{errors.email.message}</span>
-          ) : (
-            <span className={classes.errorMessage}></span>
-          )}
+          <span className={classes.errorMessage}>
+            {errors.email ? errors.email.message : ''}
+          </span>
         </label>
         <label htmlFor="password">
           <div className={classes.spaceBetween}>
@@ -65,6 +63,9 @@ export function AuthForm() {
             id="password"
             {...register('password')}
           />
+          <span className={classes.errorMessage}>
+            {errors.password ? errors.password.message : ''}
+          </span>
         </label>
         <button className={classes.formBtn} type="submit" disabled={!isValid}>
           {dictionary.logIn}

@@ -2,7 +2,7 @@ import { useLanguage } from '../../hooks';
 import { LanguageSelector } from '../LanguageSelector';
 import style from './Header.module.css';
 import { useScrollPosition } from '../../hooks';
-import { auth, logout } from '../../firebase';
+import { auth, logout } from '../../utils/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 

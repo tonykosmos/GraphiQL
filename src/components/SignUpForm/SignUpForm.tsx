@@ -1,10 +1,10 @@
-import { schema } from '../../constants/schema';
+import { signUpSchema } from '../../constants/schema';
 import classes from './SignUpForm.module.css';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../../hooks';
-import { registerWithEmailAndPassword } from '../../firebase';
+import { registerWithEmailAndPassword } from '../../utils/firebase';
 import { signUpFields } from './types';
 
 export function SignUpForm() {
@@ -12,7 +12,7 @@ export function SignUpForm() {
     register,
     handleSubmit,
     formState: { errors, isValid },
-  } = useForm({ resolver: yupResolver(schema), mode: 'onChange' });
+  } = useForm({ resolver: yupResolver(signUpSchema), mode: 'onChange' });
 
   const navigate = useNavigate();
   const { dictionary } = useLanguage();
@@ -40,11 +40,9 @@ export function SignUpForm() {
             id="email"
             {...register('email')}
           />
-          {errors.email ? (
-            <span className={classes.errorMessage}>{errors.email.message}</span>
-          ) : (
-            <span className={classes.errorMessage}></span>
-          )}
+          <span className={classes.errorMessage}>
+            {errors.email ? errors.email.message : ''}
+          </span>
         </label>
         <label htmlFor="password">
           <div className={classes.spaceBetween}>
@@ -56,13 +54,9 @@ export function SignUpForm() {
             id="password"
             {...register('password')}
           />
-          {errors.password ? (
-            <div className={classes.errorMessage}>
-              {errors.password.message}
-            </div>
-          ) : (
-            <span className={classes.errorMessage}></span>
-          )}
+          <span className={classes.errorMessage}>
+            {errors.password ? errors.password.message : ''}
+          </span>
         </label>
         <label htmlFor="confirmPassword">
           {dictionary.confirmPassword}:
@@ -72,13 +66,9 @@ export function SignUpForm() {
             id="confirmPassword"
             {...register('confirmPassword')}
           />
-          {errors.confirmPassword ? (
-            <span className={classes.errorMessage}>
-              {errors.confirmPassword.message}
-            </span>
-          ) : (
-            <span className={classes.errorMessage}></span>
-          )}
+          <span className={classes.errorMessage}>
+            {errors.confirmPassword ? errors.confirmPassword.message : ''}
+          </span>
         </label>
         <button className={classes.formBtn} type="submit" disabled={!isValid}>
           {dictionary.signUp}

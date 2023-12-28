@@ -1,8 +1,9 @@
 import { Outlet, useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from '../../firebase';
+import { auth } from '../../utils/firebase';
 import { Footer } from '../../components/Footer';
 import { Header } from '../../components/Header';
+// import { Auth } from '../../components/Auth';
 import { useEffect } from 'react';
 
 export function Root() {
@@ -19,9 +20,11 @@ export function Root() {
   }, [user, loading, navigate]);
   return (
     <div>
+      {/* <Auth>  */}
       <Header />
       <Outlet />
       <Footer />
+      {/* </Auth> */}
     </div>
   );
 }

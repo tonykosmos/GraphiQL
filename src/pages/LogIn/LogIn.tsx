@@ -1,7 +1,7 @@
-import { AuthForm } from '../../components/AuthForm';
+import { LogInForm } from '../../components/LogInForm';
 import { useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from '../../firebase';
+import { auth } from '../../utils/firebase';
 import { useEffect } from 'react';
 
 export function LogIn() {
@@ -9,13 +9,10 @@ export function LogIn() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (loading) {
-      return;
-    }
     if (user) {
       navigate('/');
     }
   }, [user, loading, navigate]);
 
-  return <AuthForm />;
+  return <LogInForm />;
 }

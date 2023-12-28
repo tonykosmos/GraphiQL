@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-export const schema = yup.object({
+export const signUpSchema = yup.object({
   email: yup.string().required('Required field').email(),
   password: yup
     .string()

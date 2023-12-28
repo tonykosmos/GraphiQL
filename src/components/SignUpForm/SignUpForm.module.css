@@ -33,7 +33,7 @@
 .errorMessage {
   font-size: 12px;
   width: 300px;
-  color: rgb(255, 19, 19);
+  color: var(--error-message-color);
   height: 14px;
 }
 
