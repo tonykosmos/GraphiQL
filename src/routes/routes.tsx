@@ -2,11 +2,9 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Welcome } from '../pages/Welcome';
 import { SignUp } from '../pages/SignUp';
 import { LogIn } from '../pages/LogIn';
-import { AppLayout } from './AppLayout';
+import { AppLayout, AuthLayout, HeaderLayout } from './layouts';
 import { ErrorPage } from '../pages/ErrorPage';
 import { GraphiQLPage } from '../pages/GraphiQLPage';
-import { AuthLayout } from './AuthLayout';
-import { HeaderLayout } from './HeaderLayout';
 
 const routerConfig = [
   {

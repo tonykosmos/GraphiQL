@@ -12,15 +12,23 @@ enum MODE {
   REQUEST_EDITOR = 'request-editor',
 }
 
+const thirtyRows = 30;
+const fifteenRows = 15;
+
 export function EditorViewer({ isViewer }: { isViewer: boolean }) {
   const { dictionary } = useLanguage();
   const { bodyRequest, response } = useAppSelector(
     (state: RootState) => state.queryData
   );
   const dispatch = useAppDispatch();
-  const thirtyRows = 30;
-  const fifteenRows = 15;
 
+  const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(
+      isViewer
+        ? setResponse(event.target.value)
+        : setBodyRequest(event.target.value)
+    );
+  };
   return (
     <TextField
       id={isViewer ? MODE.RESPONSE_VIEWER : MODE.REQUEST_EDITOR}
@@ -32,13 +40,7 @@ export function EditorViewer({ isViewer }: { isViewer: boolean }) {
       variant="filled"
       margin="normal"
       value={isViewer ? response : bodyRequest}
-      onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-        dispatch(
-          isViewer
-            ? setResponse(event.target.value)
-            : setBodyRequest(event.target.value)
-        );
-      }}
+      onChange={changeHandler}
     />
   );
 }

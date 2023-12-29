@@ -4,12 +4,16 @@ import {
   defaultAPIRequest,
   defaultRequestText,
 } from '../../constants/defaultValues';
+import { RequestFetchParam, QueryDataState } from './types';
 
-export type RequestFetchParam = {
-  apiEndpoint: string;
-  bodyRequest: string;
-  headersRequest: string;
-  variablesRequest: string;
+const initialState: QueryDataState = {
+  apiEndpoint: defaultAPIRequest,
+  bodyRequest: defaultRequestText,
+  headersRequest: '',
+  variablesRequest: '',
+  response: '',
+  isLoadingRequest: false,
+  errorRequest: '',
 };
 
 export const requestFetch = createAsyncThunk(
@@ -39,22 +43,6 @@ export const requestFetch = createAsyncThunk(
     }
   }
 );
-
-export type QueryDataState = {
-  response: string;
-  isLoadingRequest: boolean;
-  errorRequest: string;
-} & RequestFetchParam;
-
-const initialState: QueryDataState = {
-  apiEndpoint: defaultAPIRequest,
-  bodyRequest: defaultRequestText,
-  headersRequest: '',
-  variablesRequest: '',
-  response: '',
-  isLoadingRequest: false,
-  errorRequest: '',
-};
 
 export const queryDataSlice = createSlice({
   name: 'queryData',

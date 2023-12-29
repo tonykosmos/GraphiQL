@@ -9,24 +9,26 @@ import { EndpointHelper } from '../EndpointHelper/EndpointHelper';
 
 export function EndpointInput() {
   const { dictionary } = useLanguage();
-
   const apiEndpoint = useAppSelector(
     (state: RootState) => state.queryData.apiEndpoint
   );
   const dispatch = useAppDispatch();
-
   const [localEndpoint, setLocalEndpoint] = useState<string>(apiEndpoint);
+  const [isWindowOpen, setIsWindowOpen] = useState(false);
 
-  const clickChangeEndpoint = () => {
-    dispatch(setApiEndpoint(localEndpoint));
-  };
-
-  const [isOpenWindow, setIsOpenWindow] = useState(false);
-  const closeWindow = () => {
-    setIsOpenWindow(false);
+  const changeTextFieldEndpoint = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setLocalEndpoint(event.target.value);
   };
   const openWindow = () => {
-    setIsOpenWindow(true);
+    setIsWindowOpen(true);
+  };
+  const closeWindow = () => {
+    setIsWindowOpen(false);
+  };
+  const changeEndpoint = () => {
+    dispatch(setApiEndpoint(localEndpoint));
   };
 
   return (
@@ -43,9 +45,7 @@ export function EndpointInput() {
         margin="normal"
         fullWidth
         value={localEndpoint}
-        onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-          setLocalEndpoint(event.target.value);
-        }}
+        onChange={changeTextFieldEndpoint}
       />
       <Tooltip title={dictionary.helpInformation}>
         <IconButton onClick={openWindow}>
@@ -53,10 +53,10 @@ export function EndpointInput() {
         </IconButton>
       </Tooltip>
       <EndpointHelper
-        isOpenWindow={isOpenWindow}
+        isWindowOpen={isWindowOpen}
         openWindowHandler={closeWindow}
       />
-      <Button onClick={clickChangeEndpoint}>Change Endpoint</Button>
+      <Button onClick={changeEndpoint}>Change Endpoint</Button>
     </Box>
   );
 }

@@ -24,7 +24,7 @@ export function ControlPanel() {
   const { dictionary } = useLanguage();
 
   const executeRequest = () => {
-    if (!apiEndpoint.length || !bodyRequest.length) {
+    if (!apiEndpoint || !bodyRequest) {
       return;
     }
     dispatch(
@@ -47,8 +47,6 @@ export function ControlPanel() {
     //TODO: logic for prettify
   };
 
-  const iconSize = 50;
-
   return (
     <Box>
       <Tooltip title={dictionary.startRequest}>
@@ -60,7 +58,7 @@ export function ControlPanel() {
           {isLoadingRequest ? (
             <StopIcon
               sx={{
-                fontSize: iconSize,
+                fontSize: 50,
                 color: 'var(--gray)',
                 borderRadius: 10,
               }}
@@ -68,7 +66,7 @@ export function ControlPanel() {
           ) : (
             <PlayArrowIcon
               sx={{
-                fontSize: iconSize,
+                fontSize: 50,
                 color: 'var(--green)',
                 borderRadius: 10,
               }}
@@ -80,7 +78,7 @@ export function ControlPanel() {
         <IconButton onClick={clearRequest} sx={{ marginTop: 1 }}>
           <Delete
             sx={{
-              fontSize: iconSize,
+              fontSize: 50,
               color: 'var(--brown)',
               borderRadius: 10,
             }}
@@ -91,7 +89,7 @@ export function ControlPanel() {
         <IconButton onClick={prettifyRequest} sx={{ marginTop: 1 }}>
           <AutoFixHighIcon
             sx={{
-              fontSize: iconSize,
+              fontSize: 50,
               color: 'var(--gray)',
               borderRadius: 10,
             }}

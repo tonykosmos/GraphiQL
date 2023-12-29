@@ -9,19 +9,17 @@ import {
 import CloseIcon from '@mui/icons-material/Close';
 import { defaultAPIRequest } from '../../constants/defaultValues';
 import { useLanguage } from '../../hooks';
+import { EndpointHelperProps } from './types';
 
 export function EndpointHelper({
-  isOpenWindow,
+  isWindowOpen,
   openWindowHandler,
-}: {
-  isOpenWindow: boolean;
-  openWindowHandler: (isOpen: boolean) => void;
-}) {
+}: EndpointHelperProps) {
   const { dictionary } = useLanguage();
   return (
     <Backdrop
       sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
-      open={isOpenWindow}
+      open={isWindowOpen}
     >
       <Card sx={{ minWidth: 300, backgroundColor: 'var(--gray)' }}>
         <CardContent>
