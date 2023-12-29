@@ -16,6 +16,11 @@
   --header-bg-color: #3a464d;
   --header-small-bg-color: #46494b;
 
+  --white: #ffffff;
+  --gray: #808080;
+  --green: #008000;
+  --brown: #a52a2a;
+
   color: var(--main-font-color);
   background-color: var(--main-bg-color);
 

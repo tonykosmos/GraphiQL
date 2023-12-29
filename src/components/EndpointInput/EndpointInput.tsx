@@ -22,10 +22,10 @@ export function EndpointInput() {
   };
 
   const [isOpenWindow, setIsOpenWindow] = useState(false);
-  const handleClose = () => {
+  const closeWindow = () => {
     setIsOpenWindow(false);
   };
-  const handleOpen = () => {
+  const openWindow = () => {
     setIsOpenWindow(true);
   };
 
@@ -48,13 +48,13 @@ export function EndpointInput() {
         }}
       />
       <Tooltip title={dictionary.helpInformation}>
-        <IconButton onClick={handleOpen}>
-          <HelpIcon sx={{ color: 'white' }} />
+        <IconButton onClick={openWindow}>
+          <HelpIcon sx={{ color: 'var(--white)' }} />
         </IconButton>
       </Tooltip>
       <EndpointHelper
         isOpenWindow={isOpenWindow}
-        openWindowHandler={handleClose}
+        openWindowHandler={closeWindow}
       />
       <Button onClick={clickChangeEndpoint}>Change Endpoint</Button>
     </Box>

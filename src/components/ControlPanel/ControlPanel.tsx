@@ -23,7 +23,7 @@ export function ControlPanel() {
   const dispatch = useAppDispatch();
   const { dictionary } = useLanguage();
 
-  const onClickExecuteRequest = () => {
+  const executeRequest = () => {
     if (!apiEndpoint.length || !bodyRequest.length) {
       return;
     }
@@ -37,37 +37,39 @@ export function ControlPanel() {
     );
   };
 
-  const onClickClearRequest = () => {
+  const clearRequest = () => {
     dispatch(setBodyRequest(''));
     dispatch(setResponse(''));
   };
 
-  const onClickPrettifyRequest = () => {
+  const prettifyRequest = () => {
     console.log('Prettify');
     //TODO: logic for prettify
   };
+
+  const iconSize = 50;
 
   return (
     <Box>
       <Tooltip title={dictionary.startRequest}>
         <IconButton
-          onClick={onClickExecuteRequest}
+          onClick={executeRequest}
           sx={{ marginTop: 1 }}
           disabled={isLoadingRequest}
         >
           {isLoadingRequest ? (
             <StopIcon
               sx={{
-                fontSize: 50,
-                color: 'gray',
+                fontSize: iconSize,
+                color: 'var(--gray)',
                 borderRadius: 10,
               }}
             />
           ) : (
             <PlayArrowIcon
               sx={{
-                fontSize: 50,
-                color: 'green',
+                fontSize: iconSize,
+                color: 'var(--green)',
                 borderRadius: 10,
               }}
             />
@@ -75,22 +77,22 @@ export function ControlPanel() {
         </IconButton>
       </Tooltip>
       <Tooltip title={dictionary.clearRequestParams}>
-        <IconButton onClick={onClickClearRequest} sx={{ marginTop: 1 }}>
+        <IconButton onClick={clearRequest} sx={{ marginTop: 1 }}>
           <Delete
             sx={{
-              fontSize: 50,
-              color: 'brown',
+              fontSize: iconSize,
+              color: 'var(--brown)',
               borderRadius: 10,
             }}
           />
         </IconButton>
       </Tooltip>
       <Tooltip title={dictionary.prettifyRequest}>
-        <IconButton onClick={onClickPrettifyRequest} sx={{ marginTop: 1 }}>
+        <IconButton onClick={prettifyRequest} sx={{ marginTop: 1 }}>
           <AutoFixHighIcon
             sx={{
-              fontSize: 50,
-              color: 'gray',
+              fontSize: iconSize,
+              color: 'var(--gray)',
               borderRadius: 10,
             }}
           />

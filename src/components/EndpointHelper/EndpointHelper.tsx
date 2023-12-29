@@ -20,12 +20,12 @@ export function EndpointHelper({
   const { dictionary } = useLanguage();
   return (
     <Backdrop
-      sx={{ color: 'white', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
       open={isOpenWindow}
     >
-      <Card sx={{ minWidth: 300, backgroundColor: 'gray' }}>
+      <Card sx={{ minWidth: 300, backgroundColor: 'var(--gray)' }}>
         <CardContent>
-          <Typography sx={{ mb: 1.5 }}>
+          <Typography sx={{ mb: 2 }}>
             {dictionary.messageAPIEndpointsList}
           </Typography>
           <Typography variant="body2">
@@ -40,7 +40,7 @@ export function EndpointHelper({
         <CardActions sx={{ float: 'right' }}>
           <IconButton
             onClick={() => openWindowHandler(false)}
-            sx={{ color: 'white' }}
+            sx={{ color: 'var(--white)' }}
           >
             <CloseIcon />
           </IconButton>
