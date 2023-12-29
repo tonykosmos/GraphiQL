@@ -19,6 +19,7 @@
   "password": "Password",
   "confirmPassword": "Confirm password",
   "APIEndpoint": "API Endpoint",
+  "changeEndpoint": "Change Endpoint",
   "requestEditor": "Request Editor",
   "responseViewer": "Response Viewer",
   "messageAPIEndpointsList": "Message APIEndpoints List:",

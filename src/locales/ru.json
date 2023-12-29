@@ -19,6 +19,7 @@
   "password": "Пароль",
   "confirmPassword": "Подтвердите пароль",
   "APIEndpoint": "Конечная точка API запроса",
+  "changeEndpoint": "Изменить конечную точку",
   "requestEditor": "Редактор Запроса",
   "responseViewer": "Результат",
   "messageAPIEndpointsList": "Сообщение списка APIEndpoints",

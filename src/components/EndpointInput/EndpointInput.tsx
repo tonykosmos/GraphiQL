@@ -56,7 +56,7 @@ export function EndpointInput() {
         isWindowOpen={isWindowOpen}
         openWindowHandler={closeWindow}
       />
-      <Button onClick={changeEndpoint}>Change Endpoint</Button>
+      <Button onClick={changeEndpoint}>{dictionary.changeEndpoint}</Button>
     </Box>
   );
 }

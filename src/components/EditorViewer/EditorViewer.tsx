@@ -6,6 +6,7 @@ import {
   setBodyRequest,
   setResponse,
 } from '../../store/queryDataSlice/queryDataSlice';
+import { EditorViewerProps } from './types';
 
 enum MODE {
   RESPONSE_VIEWER = 'response-viewer',
@@ -15,7 +16,7 @@ enum MODE {
 const thirtyRows = 30;
 const fifteenRows = 15;
 
-export function EditorViewer({ isViewer }: { isViewer: boolean }) {
+export function EditorViewer({ isViewer }: EditorViewerProps) {
   const { dictionary } = useLanguage();
   const { bodyRequest, response } = useAppSelector(
     (state: RootState) => state.queryData
