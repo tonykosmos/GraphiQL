@@ -2,13 +2,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 0.5rem;
+  padding: 8px;
   background-color: var(--footer-bg-color);
 }
 .logo {
   display: block;
-  margin-right: 2.5rem;
-  margin-left: 2.5rem;
+  margin-right: 40px;
+  margin-left: 40px;
 }
 .logo > .link > img {
   vertical-align: middle;
@@ -18,17 +18,17 @@
   display: block;
   align-self: center;
 
-  margin-right: 2.5rem;
-  margin-left: 2.5rem;
+  margin-right: 40px;
+  margin-left: 40px;
   margin-block-start: 0;
   margin-block-end: 0;
 }
 .authorsContainer {
   display: flex;
   align-self: center;
-  margin-right: 2.5rem;
-  margin-left: 2.5rem;
-  gap: 1rem;
+  margin-right: 40px;
+  margin-left: 40px;
+  gap: 16px;
 }
 .link {
   display: inline;

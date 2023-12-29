@@ -2,7 +2,8 @@
   "headerHere": "Здесь заголовок",
   "mainHere": "Здесь основная страница",
   "changeLanguage": "Изменить язык",
-  "errorRoute": "Упс!",
+  "titleErrorPage": "Упс!",
+  "textErrorRoute": "Страница, которую Вы ищете, не может быть найдена",
   "logoCourse": "Логотип курса",
   "logoApp": "Логотип приложения",
   "sign": "Авторизация",
@@ -16,5 +17,14 @@
   "invalidCredentials": "Неправильные почта или пароль",
   "email": "Почта",
   "password": "Пароль",
-  "confirmPassword": "Подтвердите пароль"
+  "confirmPassword": "Подтвердите пароль",
+  "APIEndpoint": "Конечная точка API запроса",
+  "changeEndpoint": "Изменить конечную точку",
+  "requestEditor": "Редактор Запроса",
+  "responseViewer": "Результат",
+  "messageAPIEndpointsList": "Сообщение списка APIEndpoints",
+  "helpInformation": "Справочная информация",
+  "startRequest": "Запуск запроса",
+  "clearRequestParams": "Очистить параметры запроса",
+  "prettifyRequest": "Приукрасить запрос"
 }

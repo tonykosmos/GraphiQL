@@ -42,14 +42,6 @@
   justify-content: space-between;
 }
 
-.strengthIndicator {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgb(255, 0, 0);
-  margin-left: 5px;
-}
-
 .formContainer {
   display: flex;
   justify-content: center;

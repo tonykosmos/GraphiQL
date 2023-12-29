@@ -37,7 +37,7 @@ export function Header() {
           alt={dictionary.logoApp}
           className={style.logo}
         />
-        <span className={style.logoText}>GraphQL</span>
+        <span className={style.logoText}>GraphiQL</span>
       </a>
       <div className={style.controlContainer}>
         <LanguageSelector />
