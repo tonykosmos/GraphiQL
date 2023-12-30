@@ -11,6 +11,7 @@ import {
   setResponse,
 } from '../../store/queryDataSlice/queryDataSlice';
 import { useLanguage } from '../../hooks';
+import { ErrorSnackbar } from '../ErrorSnackbar';
 
 export function ControlPanel() {
   const {
@@ -96,6 +97,7 @@ export function ControlPanel() {
           />
         </IconButton>
       </Tooltip>
+      <ErrorSnackbar />
     </Box>
   );
 }
