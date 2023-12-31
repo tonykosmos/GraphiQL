@@ -33,7 +33,7 @@ export const requestFetch = createAsyncThunk(
         }),
       });
       if (!response.ok) {
-        throw new Error('Server error.');
+        throw new Error(`Error ${response.status} ${response.statusText}`);
       }
       const content = await response.json();
       const data = JSON.stringify(content, null, 4);
@@ -80,7 +80,7 @@ export const queryDataSlice = createSlice({
       )
       .addCase(requestFetch.rejected, (state, action) => {
         state.isLoadingRequest = false;
-        state.errorRequest = (action.payload as Error).message;
+        state.errorRequest = `${action.error.message} "${action.payload}"`;
       });
   },
 });
