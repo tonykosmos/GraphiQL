@@ -43,8 +43,53 @@ export function ControlPanel() {
     dispatch(setResponse(''));
   };
 
+  const prettyPrint = (str: string) => {
+    const lines: string[] = str.split('\n').map((item) => item.trim());
+    console.log(lines);
+    const linesWithoutComments = lines.filter(
+      (item) => !item.includes('#') && item
+    );
+    // console.log(linesWithoutComments.map(item => item.trim()));
+    let spacesIndex: number = 0;
+    const lineBreaker = '\n';
+    const spacer = '\t';
+
+    const resultQueryString = [];
+
+    linesWithoutComments.forEach((line) => {
+      const strToAdd = `${spacer.repeat(
+        spacesIndex
+      )} ${line.trim()} ${lineBreaker}`;
+      resultQueryString.push(strToAdd);
+
+      if (line[line.length - 1].trim() === '{') {
+        spacesIndex += 1;
+      }
+      if (line[line.length - 1].trim() === '}') {
+        spacesIndex -= 1;
+      }
+    });
+
+    // console.log(resultQueryString.j);
+
+    // console.log(resultQueryString);
+
+    dispatch(setBodyRequest(resultQueryString.join('')));
+
+    // const offsets = [];
+    // let index=0;
+    // const offets = (tokens).forEach((token)=>{
+    //    offsets.push('\t'.repeat(index)+token.trim());
+    //    if (token.match('[\\{|\\(|\\[]')){index++};
+    //    if (token.match('[\\}|\\)|\\]]')){index--};
+    // })
+    // return offsets.join('\n');
+  };
+
   const prettifyRequest = () => {
-    console.log('Prettify');
+    prettyPrint(bodyRequest);
+    // console.log(prettyPrint(bodyRequest));
+    // console.log('Prettify');
     //TODO: logic for prettify
   };
 
