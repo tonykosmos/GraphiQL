@@ -26,5 +26,6 @@
   "helpInformation": "Help information",
   "startRequest": "Start Request",
   "clearRequestParams": "Clear Request parameters",
-  "prettifyRequest": "Prettify Request"
+  "prettifyRequest": "Prettify Request",
+  "documentation": "Documentation"
 }

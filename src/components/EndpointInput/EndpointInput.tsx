@@ -6,6 +6,8 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { setApiEndpoint } from '../../store/queryDataSlice/queryDataSlice';
 import HelpIcon from '@mui/icons-material/Help';
 import { EndpointHelper } from '../EndpointHelper/EndpointHelper';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import DocumentationWindow from '../DocumentationWindow';
 
 export function EndpointInput() {
   const { dictionary } = useLanguage();
@@ -15,6 +17,7 @@ export function EndpointInput() {
   const dispatch = useAppDispatch();
   const [localEndpoint, setLocalEndpoint] = useState<string>(apiEndpoint);
   const [isWindowOpen, setIsWindowOpen] = useState(false);
+  const [isDocWindowOpen, setIsDocWindowOpen] = useState(false);
 
   const changeTextFieldEndpoint = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -30,15 +33,26 @@ export function EndpointInput() {
   const changeEndpoint = () => {
     dispatch(setApiEndpoint(localEndpoint));
   };
+  const openDocumentation = () => {
+    setIsDocWindowOpen(true);
+  };
 
   return (
     <Box
       sx={{
         display: 'grid',
-        gridTemplateColumns: { sm: '1fr 0.1fr' },
+        gridTemplateColumns: { sm: '0.1fr 1fr 0.1fr' },
+        gridTemplateAreas: `'menu input help'
+        'menu button help'`,
       }}
     >
+      <Tooltip sx={{ gridArea: 'menu' }} title={dictionary.documentation}>
+        <IconButton onClick={openDocumentation}>
+          <MenuBookIcon sx={{ color: 'var(--white)' }} />
+        </IconButton>
+      </Tooltip>
       <TextField
+        sx={{ gridArea: 'input' }}
         id="api-endpoint"
         label={dictionary.APIEndpoint}
         variant="filled"
@@ -47,16 +61,22 @@ export function EndpointInput() {
         value={localEndpoint}
         onChange={changeTextFieldEndpoint}
       />
-      <Tooltip title={dictionary.helpInformation}>
+      <Tooltip sx={{ gridArea: 'help' }} title={dictionary.helpInformation}>
         <IconButton onClick={openWindow}>
           <HelpIcon sx={{ color: 'var(--white)' }} />
         </IconButton>
       </Tooltip>
+      <Button sx={{ gridArea: 'button' }} onClick={changeEndpoint}>
+        {dictionary.changeEndpoint}
+      </Button>
       <EndpointHelper
         isWindowOpen={isWindowOpen}
         openWindowHandler={closeWindow}
       />
-      <Button onClick={changeEndpoint}>{dictionary.changeEndpoint}</Button>
+      <DocumentationWindow
+        isOpenWindow={isDocWindowOpen}
+        setIsOpenWindowHandler={setIsDocWindowOpen}
+      />
     </Box>
   );
 }

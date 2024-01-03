@@ -13,5 +13,8 @@ query Planets {
   }
 }
 `;
+
 export const defaultAPIRequest =
   'https://swapi-graphql.netlify.app/.netlify/functions/index';
+
+export const firstExampleAPIRequest = 'https://countries.trevorblades.com';

@@ -26,5 +26,6 @@
   "helpInformation": "Справочная информация",
   "startRequest": "Запуск запроса",
   "clearRequestParams": "Очистить параметры запроса",
-  "prettifyRequest": "Приукрасить запрос"
+  "prettifyRequest": "Приукрасить запрос",
+  "documentation": "Документация"
 }
