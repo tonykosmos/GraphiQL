@@ -43,54 +43,49 @@ export function ControlPanel() {
     dispatch(setResponse(''));
   };
 
-  const prettyPrint = (str: string) => {
-    const lines: string[] = str.split('\n').map((item) => item.trim());
-    console.log(lines);
-    const linesWithoutComments = lines.filter(
-      (item) => !item.includes('#') && item
-    );
-    // console.log(linesWithoutComments.map(item => item.trim()));
-    let spacesIndex: number = 0;
-    const lineBreaker = '\n';
-    const spacer = '\t';
+  const prettifyRequest = () => {
+    const lines: string[] = bodyRequest.split('\n').map((item) => item.trim());
+    // console.log(lines);
+    const linesWithoutSpacesAndComments = lines
+      .filter((item) => !item.includes('#'))
+      .join(' ')
+      .split(' ')
+      .filter((item) => item)
+      .join(' ')
+      .replaceAll('{', ' { ')
+      .replaceAll('}', ' } ')
+      .split(' ')
+      .filter((item) => item);
 
-    const resultQueryString = [];
+    let tabsNum: number = 0;
+    const arrToParse: string[] = [];
 
-    linesWithoutComments.forEach((line) => {
-      const strToAdd = `${spacer.repeat(
-        spacesIndex
-      )} ${line.trim()} ${lineBreaker}`;
-      resultQueryString.push(strToAdd);
-
-      if (line[line.length - 1].trim() === '{') {
-        spacesIndex += 1;
+    linesWithoutSpacesAndComments.forEach((item, index) => {
+      if (item === '{') {
+        arrToParse.push(item);
+      } else {
+        arrToParse.push(`${'\t'.repeat(tabsNum)}${item}`);
       }
-      if (line[line.length - 1].trim() === '}') {
-        spacesIndex -= 1;
+      if (
+        linesWithoutSpacesAndComments[index + 1] &&
+        linesWithoutSpacesAndComments[index + 1] !== '{' &&
+        index !== 0
+      ) {
+        arrToParse.push('\n');
+      }
+
+      if (item === '{') {
+        tabsNum += 1;
+      }
+
+      if (item === '}' || linesWithoutSpacesAndComments[index + 1] === '}') {
+        tabsNum -= 1;
       }
     });
 
-    // console.log(resultQueryString.j);
+    // console.log(arrToParse.join(' '));
 
-    // console.log(resultQueryString);
-
-    dispatch(setBodyRequest(resultQueryString.join('')));
-
-    // const offsets = [];
-    // let index=0;
-    // const offets = (tokens).forEach((token)=>{
-    //    offsets.push('\t'.repeat(index)+token.trim());
-    //    if (token.match('[\\{|\\(|\\[]')){index++};
-    //    if (token.match('[\\}|\\)|\\]]')){index--};
-    // })
-    // return offsets.join('\n');
-  };
-
-  const prettifyRequest = () => {
-    prettyPrint(bodyRequest);
-    // console.log(prettyPrint(bodyRequest));
-    // console.log('Prettify');
-    //TODO: logic for prettify
+    dispatch(setBodyRequest(arrToParse.join(' ')));
   };
 
   return (
