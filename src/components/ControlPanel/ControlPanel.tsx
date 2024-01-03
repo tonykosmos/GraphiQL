@@ -45,7 +45,6 @@ export function ControlPanel() {
 
   const prettifyRequest = () => {
     const lines: string[] = bodyRequest.split('\n').map((item) => item.trim());
-    // console.log(lines);
     const linesWithoutSpacesAndComments = lines
       .filter((item) => !item.includes('#'))
       .join(' ')
@@ -82,8 +81,6 @@ export function ControlPanel() {
         tabsNum -= 1;
       }
     });
-
-    // console.log(arrToParse.join(' '));
 
     dispatch(setBodyRequest(arrToParse.join(' ')));
   };
