@@ -27,5 +27,6 @@
   "startRequest": "Запуск запроса",
   "clearRequestParams": "Очистить параметры запроса",
   "prettifyRequest": "Приукрасить запрос",
-  "documentation": "Документация"
+  "documentation": "Документация",
+  "descriptionDocumentation": "Текст документации представлен в виде SDL строки"
 }

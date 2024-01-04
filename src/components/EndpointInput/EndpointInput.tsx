@@ -1,23 +1,28 @@
 import { Box, Button, IconButton, TextField, Tooltip } from '@mui/material';
 import { useLanguage } from '../../hooks';
-import { useState } from 'react';
+import { Suspense, lazy, useState } from 'react';
 import { RootState } from '../../store/store';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { setApiEndpoint } from '../../store/queryDataSlice/queryDataSlice';
 import HelpIcon from '@mui/icons-material/Help';
 import { EndpointHelper } from '../EndpointHelper/EndpointHelper';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
-import DocumentationWindow from '../DocumentationWindow';
+import { documentationDataFetch } from '../../store/documentationSlice/documentationSlice';
+
+const DocumentationWindow = lazy(() => import('../DocumentationWindow'));
 
 export function EndpointInput() {
   const { dictionary } = useLanguage();
   const apiEndpoint = useAppSelector(
     (state: RootState) => state.queryData.apiEndpoint
   );
+
   const dispatch = useAppDispatch();
   const [localEndpoint, setLocalEndpoint] = useState<string>(apiEndpoint);
-  const [isWindowOpen, setIsWindowOpen] = useState(false);
+  const [isHelpWindowOpen, setIsHelpWindowOpen] = useState(false);
   const [isDocWindowOpen, setIsDocWindowOpen] = useState(false);
+  const [isAvailableClickDocumentation, setIsAvailableClickDocumentation] =
+    useState(true);
 
   const changeTextFieldEndpoint = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -25,16 +30,19 @@ export function EndpointInput() {
     setLocalEndpoint(event.target.value);
   };
   const openWindow = () => {
-    setIsWindowOpen(true);
+    setIsHelpWindowOpen(true);
   };
   const closeWindow = () => {
-    setIsWindowOpen(false);
+    setIsHelpWindowOpen(false);
   };
   const changeEndpoint = () => {
     dispatch(setApiEndpoint(localEndpoint));
   };
-  const openDocumentation = () => {
+  const openDocumentation = async () => {
+    setIsAvailableClickDocumentation(false);
+    await dispatch(documentationDataFetch({ apiEndpoint }));
     setIsDocWindowOpen(true);
+    setIsAvailableClickDocumentation(true);
   };
 
   return (
@@ -47,7 +55,10 @@ export function EndpointInput() {
       }}
     >
       <Tooltip sx={{ gridArea: 'menu' }} title={dictionary.documentation}>
-        <IconButton onClick={openDocumentation}>
+        <IconButton
+          onClick={openDocumentation}
+          disabled={!isAvailableClickDocumentation}
+        >
           <MenuBookIcon sx={{ color: 'var(--white)' }} />
         </IconButton>
       </Tooltip>
@@ -70,13 +81,15 @@ export function EndpointInput() {
         {dictionary.changeEndpoint}
       </Button>
       <EndpointHelper
-        isWindowOpen={isWindowOpen}
+        isWindowOpen={isHelpWindowOpen}
         openWindowHandler={closeWindow}
       />
-      <DocumentationWindow
-        isOpenWindow={isDocWindowOpen}
-        setIsOpenWindowHandler={setIsDocWindowOpen}
-      />
+      <Suspense>
+        <DocumentationWindow
+          isOpenWindow={isDocWindowOpen}
+          setIsOpenWindowHandler={setIsDocWindowOpen}
+        />
+      </Suspense>
     </Box>
   );
 }

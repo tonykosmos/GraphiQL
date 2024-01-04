@@ -1,21 +1,30 @@
 import { Alert, Snackbar } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { useAppSelector } from '../../store/hooks';
+import { useAppSelector, useAppDispatch } from '../../store/hooks';
 import { RootState } from '../../store/store';
+import { setDocumentationResponse } from '../../store/documentationSlice/documentationSlice';
+import { setQueryResponse } from '../../store/queryDataSlice/queryDataSlice';
 
 const autoHideDuration = 10000;
 
 export function ErrorSnackbar() {
+  const { errorDocumentation } = useAppSelector(
+    (state: RootState) => state.documentationData
+  );
   const { errorRequest } = useAppSelector(
     (state: RootState) => state.queryData
   );
+  const dispatch = useAppDispatch();
   const [isErrorMessageOpen, setIsErrorMessageOpen] = useState(false);
 
   useEffect(() => {
-    if (errorRequest) {
+    if (errorDocumentation || errorRequest) {
       setIsErrorMessageOpen(true);
+      dispatch(
+        errorDocumentation ? setDocumentationResponse('') : setQueryResponse('')
+      );
     }
-  }, [errorRequest]);
+  }, [errorDocumentation, errorRequest]);
 
   const closeWindow = (
     event?: React.SyntheticEvent | Event,
@@ -34,7 +43,7 @@ export function ErrorSnackbar() {
       onClose={closeWindow}
     >
       <Alert onClose={closeWindow} severity="error" sx={{ width: '100%' }}>
-        {errorRequest}
+        {errorDocumentation || errorRequest}
       </Alert>
     </Snackbar>
   );

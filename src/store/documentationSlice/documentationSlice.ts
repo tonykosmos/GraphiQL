@@ -3,9 +3,9 @@ import { DocumentationFetchParam, DocumentationState } from './types';
 import { buildClientSchema, getIntrospectionQuery, printSchema } from 'graphql';
 
 const initialState: DocumentationState = {
-  response: '',
-  isLoading: false,
-  error: '',
+  documentationResponse: '',
+  isLoadingDocumentation: false,
+  errorDocumentation: '',
 };
 
 export const documentationDataFetch = createAsyncThunk(
@@ -33,29 +33,29 @@ export const documentationDataSlice = createSlice({
   name: 'documentationData',
   initialState,
   reducers: {
-    setResponse: (state, action: PayloadAction<string>) => {
-      state.response = action.payload;
+    setDocumentationResponse: (state, action: PayloadAction<string>) => {
+      state.documentationResponse = action.payload;
     },
   },
   extraReducers(builder) {
     builder
       .addCase(documentationDataFetch.pending, (state) => {
-        state.isLoading = true;
-        state.error = '';
+        state.isLoadingDocumentation = true;
+        state.errorDocumentation = '';
       })
       .addCase(
         documentationDataFetch.fulfilled,
         (state, action: PayloadAction<string>) => {
-          state.isLoading = false;
-          state.response = action.payload;
-          state.error = '';
+          state.isLoadingDocumentation = false;
+          state.documentationResponse = action.payload;
+          state.errorDocumentation = '';
         }
       )
       .addCase(documentationDataFetch.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = `${action.error.message} "${action.payload}"`;
+        state.isLoadingDocumentation = false;
+        state.errorDocumentation = `${action.error.message} "${action.payload}"`;
       });
   },
 });
-export const { setResponse } = documentationDataSlice.actions;
+export const { setDocumentationResponse } = documentationDataSlice.actions;
 export default documentationDataSlice.reducer;
