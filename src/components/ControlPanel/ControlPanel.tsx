@@ -44,8 +44,42 @@ export function ControlPanel() {
   };
 
   const prettifyRequest = () => {
-    console.log('Prettify');
-    //TODO: logic for prettify
+    const lines: string[] = bodyRequest.split('\n').map((item) => item.trim());
+    const linesWithoutSpacesAndComments = lines
+      .filter((item) => !item.includes('#'))
+      .join(' ')
+      .split(' ')
+      .filter((item) => item)
+      .join(' ')
+      .replaceAll('{', ' { ')
+      .replaceAll('}', ' } ')
+      .split(' ')
+      .filter((item) => item);
+
+    let tabsNum: number = 0;
+    const arrToParse: string[] = [];
+
+    linesWithoutSpacesAndComments.forEach((item, index) => {
+      if (item === '{') {
+        arrToParse.push(item);
+      } else {
+        arrToParse.push(`${'\t'.repeat(tabsNum)}${item}`);
+      }
+
+      if (linesWithoutSpacesAndComments[index + 1] !== '{' && index) {
+        arrToParse.push('\n');
+      }
+
+      if (item === '{') {
+        tabsNum += 1;
+      }
+
+      if (item === '}' || linesWithoutSpacesAndComments[index + 1] === '}') {
+        tabsNum -= 1;
+      }
+    });
+
+    dispatch(setBodyRequest(arrToParse.join(' ')));
   };
 
   return (
