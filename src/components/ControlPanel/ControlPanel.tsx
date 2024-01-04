@@ -65,11 +65,8 @@ export function ControlPanel() {
       } else {
         arrToParse.push(`${'\t'.repeat(tabsNum)}${item}`);
       }
-      if (
-        linesWithoutSpacesAndComments[index + 1] &&
-        linesWithoutSpacesAndComments[index + 1] !== '{' &&
-        index !== 0
-      ) {
+
+      if (linesWithoutSpacesAndComments[index + 1] !== '{' && index) {
         arrToParse.push('\n');
       }
 
