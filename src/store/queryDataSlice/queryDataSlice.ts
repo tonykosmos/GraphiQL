@@ -32,9 +32,6 @@ export const requestFetch = createAsyncThunk(
           query: bodyRequest,
         }),
       });
-      if (!response.ok) {
-        throw new Error(`Error ${response.status} ${response.statusText}`);
-      }
       const content = await response.json();
       const data = JSON.stringify(content, null, 4);
       return data;
@@ -60,7 +57,7 @@ export const queryDataSlice = createSlice({
     setVariablesRequest: (state, action: PayloadAction<string>) => {
       state.variablesRequest = action.payload;
     },
-    setResponse: (state, action: PayloadAction<string>) => {
+    setQueryResponse: (state, action: PayloadAction<string>) => {
       state.response = action.payload;
     },
   },
@@ -89,7 +86,7 @@ export const {
   setBodyRequest,
   setHeadersRequest,
   setVariablesRequest,
-  setResponse,
+  setQueryResponse,
 } = queryDataSlice.actions;
 
 export default queryDataSlice.reducer;

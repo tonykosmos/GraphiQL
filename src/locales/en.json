@@ -26,5 +26,7 @@
   "helpInformation": "Help information",
   "startRequest": "Start Request",
   "clearRequestParams": "Clear Request parameters",
-  "prettifyRequest": "Prettify Request"
+  "prettifyRequest": "Prettify Request",
+  "documentation": "Documentation",
+  "descriptionDocumentation": "The text of the documentation is presented in the form of an SDL string"
 }
