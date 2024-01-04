@@ -53,6 +53,7 @@ export const documentationDataSlice = createSlice({
       )
       .addCase(documentationDataFetch.rejected, (state, action) => {
         state.isLoadingDocumentation = false;
+        state.documentationResponse = '';
         state.errorDocumentation = `${action.error.message} "${action.payload}"`;
       });
   },
