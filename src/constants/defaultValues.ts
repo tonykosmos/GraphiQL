@@ -17,4 +17,6 @@ query Planets {
 export const defaultAPIRequest =
   'https://swapi-graphql.netlify.app/.netlify/functions/index';
 
-export const firstExampleAPIRequest = 'https://countries.trevorblades.com';
+export const trevorBladesAPIRequest = 'https://countries.trevorblades.com';
+
+export const exampleAPIRequest = 'https://countries.trevorblades.com';

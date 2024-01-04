@@ -1,17 +1,11 @@
-import {
-  Box,
-  Divider,
-  Drawer,
-  IconButton,
-  Typography,
-  styled,
-} from '@mui/material';
+import { Box, Divider, Drawer, IconButton, Typography } from '@mui/material';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import { DocumentationWindowProps } from './types';
 import { useLanguage } from '../../hooks';
 import { lazy, Suspense } from 'react';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { LoadingSpinner } from '../LoadingSpinner';
+import { DrawerHeader } from './styles';
 
 const DocumentationData = lazy(() => import('../DocumentationData'));
 
@@ -26,12 +20,6 @@ export function DocumentationWindow({
   const toggleDrawer = (isOpen: boolean) => () => {
     setIsOpenWindowHandler(isOpen);
   };
-
-  const DrawerHeader = styled('div')(({ theme }) => ({
-    display: 'flex',
-    padding: theme.spacing(0, 1),
-    justifyContent: 'space-between',
-  }));
 
   return (
     <Drawer
@@ -50,8 +38,8 @@ export function DocumentationWindow({
         }}
       >
         <DrawerHeader>
-          <Typography variant="h5" sx={{ mb: 2, padding: 1, marginTop: 2 }}>
-            <MenuBookIcon sx={{ paddingRight: 2 }} />
+          <Typography variant="h5" sx={{ mb: 2, padding: 1, mt: 2 }}>
+            <MenuBookIcon sx={{ pr: 2 }} />
             {dictionary.documentation}
           </Typography>
           <IconButton onClick={toggleDrawer(false)}>
@@ -60,7 +48,7 @@ export function DocumentationWindow({
         </DrawerHeader>
         <Divider />
         <Suspense fallback={<LoadingSpinner />}>
-          <Typography sx={{ paddingLeft: 2, paddingBottom: 1 }}>
+          <Typography sx={{ pl: 2, pb: 1 }}>
             {dictionary.descriptionDocumentation}
           </Typography>
           <DocumentationData />
