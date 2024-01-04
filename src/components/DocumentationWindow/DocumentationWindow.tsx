@@ -11,6 +11,7 @@ import { DocumentationWindowProps } from './types';
 import { useLanguage } from '../../hooks';
 import { lazy, Suspense } from 'react';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import { LoadingSpinner } from '../LoadingSpinner';
 
 const DocumentationData = lazy(() => import('../DocumentationData'));
 
@@ -58,11 +59,10 @@ export function DocumentationWindow({
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <Suspense
-          fallback={
-            <Typography sx={{ textAlign: 'center' }}>Loading...</Typography>
-          }
-        >
+        <Suspense fallback={<LoadingSpinner />}>
+          <Typography sx={{ paddingLeft: 2, paddingBottom: 1 }}>
+            {dictionary.descriptionDocumentation}
+          </Typography>
           <DocumentationData />
         </Suspense>
       </Box>

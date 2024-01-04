@@ -8,7 +8,7 @@ import { RootState } from '../../store/store';
 import {
   requestFetch,
   setBodyRequest,
-  setResponse,
+  setQueryResponse,
 } from '../../store/queryDataSlice/queryDataSlice';
 import { useLanguage } from '../../hooks';
 import { ErrorSnackbar } from '../ErrorSnackbar';
@@ -40,7 +40,7 @@ export function ControlPanel() {
 
   const clearRequest = () => {
     dispatch(setBodyRequest(''));
-    dispatch(setResponse(''));
+    dispatch(setQueryResponse(''));
   };
 
   const prettifyRequest = () => {

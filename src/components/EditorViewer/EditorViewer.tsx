@@ -4,7 +4,7 @@ import { RootState } from '../../store/store';
 import { useLanguage } from '../../hooks';
 import {
   setBodyRequest,
-  setResponse,
+  setQueryResponse,
 } from '../../store/queryDataSlice/queryDataSlice';
 import { EditorViewerProps } from './types';
 
@@ -26,7 +26,7 @@ export function EditorViewer({ isViewer }: EditorViewerProps) {
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(
       isViewer
-        ? setResponse(event.target.value)
+        ? setQueryResponse(event.target.value)
         : setBodyRequest(event.target.value)
     );
   };

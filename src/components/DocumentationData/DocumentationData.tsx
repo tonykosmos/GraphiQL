@@ -1,21 +1,14 @@
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { useAppSelector } from '../../store/hooks';
 import { RootState } from '../../store/store';
-import { documentationDataFetch } from '../../store/documentationSlice/documentationSlice';
-import { useEffect } from 'react';
+
 import { styled } from '@mui/material';
 
 export function DocumentationData() {
-  const { apiEndpoint } = useAppSelector((state: RootState) => state.queryData);
-  const { response } = useAppSelector(
+  const { documentationResponse } = useAppSelector(
     (state: RootState) => state.documentationData
   );
 
-  const dispatch = useAppDispatch();
-  useEffect(() => {
-    dispatch(documentationDataFetch({ apiEndpoint }));
-  }, [response]);
-
-  const CustomTestArea = styled('textarea')(({ theme }) => ({
+  const CustomTextArea = styled('textarea')(({ theme }) => ({
     width: 370,
     maxWidth: 370,
     height: 'max-content',
@@ -27,5 +20,5 @@ export function DocumentationData() {
     backgroundColor: 'var(--main-bg-color)',
     color: 'var(--main-font-color)',
   }));
-  return <CustomTestArea value={response} readOnly />;
+  return <CustomTextArea value={documentationResponse} readOnly />;
 }
