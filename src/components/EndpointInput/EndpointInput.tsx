@@ -40,9 +40,16 @@ export function EndpointInput() {
   };
   const openDocumentation = async () => {
     setIsAvailableClickDocumentation(false);
-    await dispatch(documentationDataFetch({ apiEndpoint }));
-    setIsDocWindowOpen(true);
-    setIsAvailableClickDocumentation(true);
+    await dispatch(documentationDataFetch({ apiEndpoint }))
+      .unwrap()
+      .then((result) => {
+        if (result) {
+          setIsDocWindowOpen(true);
+        }
+      })
+      .finally(() => {
+        setIsAvailableClickDocumentation(true);
+      });
   };
 
   return (
