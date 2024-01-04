@@ -15,7 +15,7 @@ export const SpinnerContainer = styled('div')(() => ({
   height: 350,
 }));
 
-export const Loading = styled('div')(() => ({
+export const Spinner = styled('div')(() => ({
   width: 50,
   height: 50,
   border: '10 solid var(--spinner-border-color)',

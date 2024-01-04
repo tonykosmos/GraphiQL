@@ -1,9 +1,9 @@
-import { SpinnerContainer, Loading } from './styles';
+import { SpinnerContainer, Spinner } from './styles';
 
 export function LoadingSpinner() {
   return (
     <SpinnerContainer>
-      <Loading />
+      <Spinner />
     </SpinnerContainer>
   );
 }
