@@ -18,5 +18,3 @@ export const defaultAPIRequest =
   'https://swapi-graphql.netlify.app/.netlify/functions/index';
 
 export const trevorBladesAPIRequest = 'https://countries.trevorblades.com';
-
-export const exampleAPIRequest = 'https://countries.trevorblades.com';

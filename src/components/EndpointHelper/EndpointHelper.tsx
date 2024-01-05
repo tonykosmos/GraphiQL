@@ -10,7 +10,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import {
   defaultAPIRequest,
   trevorBladesAPIRequest,
-  exampleAPIRequest,
 } from '../../constants/defaultValues';
 import { useLanguage } from '../../hooks';
 import { EndpointHelperProps } from './types';
@@ -30,15 +29,12 @@ export function EndpointHelper({
           <Typography sx={{ mb: 2 }}>
             {dictionary.messageAPIEndpointsList}
           </Typography>
-          {/* TODO: Set new URLs with good APIEndpoints */}
-          {[defaultAPIRequest, trevorBladesAPIRequest, exampleAPIRequest].map(
-            (text) => (
-              <Typography key={text} variant="body2" sx={{ padding: 1 }}>
-                {text}
-                <br />
-              </Typography>
-            )
-          )}
+          {[defaultAPIRequest, trevorBladesAPIRequest].map((text) => (
+            <Typography key={text} variant="body2" sx={{ padding: 1 }}>
+              {text}
+              <br />
+            </Typography>
+          ))}
         </CardContent>
         <CardActions sx={{ float: 'right' }}>
           <IconButton

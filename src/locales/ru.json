@@ -28,5 +28,7 @@
   "clearRequestParams": "Очистить параметры запроса",
   "prettifyRequest": "Приукрасить запрос",
   "documentation": "Документация",
-  "descriptionDocumentation": "Текст документации представлен в виде SDL строки"
+  "descriptionDocumentation": "Текст документации представлен в виде SDL строки",
+  "explorer": " Редактор",
+  "descriptionLinkToExplorer": "Чтобы воспользоваться редактором Graphics, воспользуйтесь ссылкой"
 }

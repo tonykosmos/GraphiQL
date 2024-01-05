@@ -1,18 +1,15 @@
 .welcomeHeader {
   text-align: center;
-  width: 690px;
+  margin-top: 200px;
+  margin-bottom: 20px;
 }
 
-.mainContainerWelcomePage {
-  width: 700px;
-}
-
-.welcomePageRoot,
 .welcomePageContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: auto;
+  min-height: 90vh;
 }
 
 .welcomePageBtn {
@@ -25,4 +22,15 @@
   display: flex;
   justify-content: space-between;
   width: 400px;
+}
+.descriptionLink {
+  font-weight: bold;
+  text-align: center;
+}
+.link {
+  text-decoration: none;
+  color: var(--link-text-color);
+}
+.link:hover {
+  color: var(--link-text-hover-color);
 }

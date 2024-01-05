@@ -27,7 +27,7 @@ export function ErrorSnackbar() {
   }, [errorDocumentation, errorRequest]);
 
   const closeWindow = (
-    event?: React.SyntheticEvent | Event,
+    _event?: React.SyntheticEvent | Event,
     reason?: string
   ) => {
     if (reason && reason === 'clickaway') {
