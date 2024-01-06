@@ -57,10 +57,10 @@ export function GraphiQLPage() {
 
           <Box>
             <CustomTabPanel value={value} index={0}>
-              <HeadersViewer hidden={false} />
+              <HeadersViewer />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
-              <VariablesViewer hidden={false} />
+              <VariablesViewer />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={2}></CustomTabPanel>
           </Box>

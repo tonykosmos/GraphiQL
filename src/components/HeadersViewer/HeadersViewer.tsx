@@ -3,12 +3,11 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { RootState } from '../../store/store';
 import { useLanguage } from '../../hooks';
 import { setHeadersRequest } from '../../store/queryDataSlice/queryDataSlice';
-import { HeadersViewerProps } from './types';
 import { MODE } from '../EditorViewer/types';
 
 const rowsNumber = 10;
 
-export function HeadersViewer({ hidden }: HeadersViewerProps) {
+export function HeadersViewer() {
   const { dictionary } = useLanguage();
   const { headersRequest } = useAppSelector(
     (state: RootState) => state.queryData
@@ -30,7 +29,6 @@ export function HeadersViewer({ hidden }: HeadersViewerProps) {
       margin="normal"
       value={headersRequest}
       onChange={changeHandler}
-      style={{ display: hidden ? 'none' : 'block' }}
     />
   );
 }

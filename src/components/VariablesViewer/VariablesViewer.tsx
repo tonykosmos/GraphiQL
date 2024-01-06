@@ -3,12 +3,11 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { RootState } from '../../store/store';
 import { useLanguage } from '../../hooks';
 import { setVariablesRequest } from '../../store/queryDataSlice/queryDataSlice';
-import { VariablesViewerProps } from './types';
 import { MODE } from '../EditorViewer/types';
 
 const rowsNumber = 10;
 
-export function VariablesViewer({ hidden }: VariablesViewerProps) {
+export function VariablesViewer() {
   const { dictionary } = useLanguage();
   const { variablesRequest } = useAppSelector(
     (state: RootState) => state.queryData
@@ -29,7 +28,6 @@ export function VariablesViewer({ hidden }: VariablesViewerProps) {
       margin="normal"
       value={variablesRequest}
       onChange={changeHandler}
-      style={{ display: hidden ? 'none' : 'block' }}
     />
   );
 }
