@@ -6,12 +6,7 @@ import {
   setBodyRequest,
   setQueryResponse,
 } from '../../store/queryDataSlice/queryDataSlice';
-import { EditorViewerProps } from './types';
-
-enum MODE {
-  RESPONSE_VIEWER = 'response-viewer',
-  REQUEST_EDITOR = 'request-editor',
-}
+import { EditorViewerProps, MODE } from './types';
 
 const thirtyRows = 30;
 const fifteenRows = 15;

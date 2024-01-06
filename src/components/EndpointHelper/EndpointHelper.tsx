@@ -30,14 +30,16 @@ export function EndpointHelper({
             {dictionary.messageAPIEndpointsList}
           </Typography>
           {[defaultAPIRequest, trevorBladesAPIRequest].map((text) => (
-            <Typography
-              key={text}
-              variant="body2"
-              sx={{ padding: 1, color: 'var(--main-font-color)' }}
-            >
-              {text}
-            </Typography>
-            <br />
+            <>
+              <Typography
+                key={text}
+                variant="body2"
+                sx={{ padding: 1, color: 'var(--main-font-color)' }}
+              >
+                {text}
+              </Typography>
+              <br />
+            </>
           ))}
         </CardContent>
         <CardActions sx={{ float: 'right' }}>

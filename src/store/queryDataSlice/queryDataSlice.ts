@@ -19,7 +19,12 @@ const initialState: QueryDataState = {
 export const requestFetch = createAsyncThunk(
   'queryData/requestFetch',
   async (
-    { apiEndpoint, bodyRequest }: RequestFetchParam,
+    {
+      apiEndpoint,
+      bodyRequest,
+      headersRequest,
+      variablesRequest,
+    }: RequestFetchParam,
     { rejectWithValue }
   ) => {
     try {
@@ -27,9 +32,11 @@ export const requestFetch = createAsyncThunk(
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          ...(headersRequest && JSON.parse(headersRequest)),
         },
         body: JSON.stringify({
           query: bodyRequest,
+          variables: variablesRequest && JSON.parse(variablesRequest),
         }),
       });
       const content = await response.json();

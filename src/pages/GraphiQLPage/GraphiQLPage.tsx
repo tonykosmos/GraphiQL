@@ -3,6 +3,7 @@ import { Box, Container } from '@mui/material';
 import { EditorViewer } from '../../components/EditorViewer';
 import { EndpointInput } from '../../components/EndpointInput';
 import { ControlPanel } from '../../components/ControlPanel';
+import { DownsideWindowTabs } from '../../components/DownsideWindowTabs';
 
 export function GraphiQLPage() {
   return (
@@ -17,6 +18,7 @@ export function GraphiQLPage() {
         <Box>
           <EndpointInput />
           <EditorViewer isViewer={false} />
+          <DownsideWindowTabs />
         </Box>
         <ControlPanel />
         <EditorViewer isViewer={true} />

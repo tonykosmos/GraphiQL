@@ -32,5 +32,8 @@
   "descriptionDocumentation": "The text of the documentation is presented in the form of an SDL string",
   "explorer": " Explorer",
   "descriptionLinkToExplorer": "To use the GraphiQL explorer, use the link to the",
-  "welcomeDescription": "To use GraphiQL explorer, you must be an authorized user, to do this, log in by clicking the 'Log in' button, or register by clicking the 'Sign Up' button"
+  "welcomeDescription": "To use GraphiQL explorer, you must be an authorized user, to do this, log in by clicking the 'Log in' button, or register by clicking the 'Sign Up' button",
+  "headers": "Headers",
+  "variables": "Variables",
+  "hide": "Hide"
 }
