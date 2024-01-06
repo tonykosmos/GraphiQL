@@ -24,13 +24,17 @@ export function EndpointHelper({
       sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
       open={isWindowOpen}
     >
-      <Card sx={{ minWidth: 300, bgcolor: 'var(--gray)' }}>
+      <Card sx={{ minWidth: 300, bgcolor: 'var(--helper-window-bg-color)' }}>
         <CardContent>
-          <Typography sx={{ mb: 2 }}>
+          <Typography sx={{ mb: 2, color: 'var(--main-font-color)' }}>
             {dictionary.messageAPIEndpointsList}
           </Typography>
           {[defaultAPIRequest, trevorBladesAPIRequest].map((text) => (
-            <Typography key={text} variant="body2" sx={{ padding: 1 }}>
+            <Typography
+              key={text}
+              variant="body2"
+              sx={{ padding: 1, color: 'var(--main-font-color)' }}
+            >
               {text}
               <br />
             </Typography>
