@@ -36,8 +36,8 @@ export function EndpointHelper({
               sx={{ padding: 1, color: 'var(--main-font-color)' }}
             >
               {text}
-              <br />
             </Typography>
+            <br />
           ))}
         </CardContent>
         <CardActions sx={{ float: 'right' }}>
