@@ -26,6 +26,7 @@
 .descriptionLink {
   font-weight: bold;
   text-align: center;
+  max-width: 1080px;
 }
 .link {
   text-decoration: none;
