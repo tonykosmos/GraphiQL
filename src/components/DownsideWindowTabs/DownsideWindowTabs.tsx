@@ -47,7 +47,7 @@ export function DownsideWindowTabs() {
         <CustomTabPanel value={value} index={1}>
           <VariablesViewer />
         </CustomTabPanel>
-        <CustomTabPanel value={value} index={2}></CustomTabPanel>
+        <CustomTabPanel value={value} index={2} />
       </Box>
     </>
   );
