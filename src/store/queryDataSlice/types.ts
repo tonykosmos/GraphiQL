@@ -4,6 +4,7 @@ export type RequestFetchParam = {
   headersRequest: string;
   variablesRequest: string;
 };
+
 export type QueryDataState = {
   response: string;
   isLoadingRequest: boolean;
