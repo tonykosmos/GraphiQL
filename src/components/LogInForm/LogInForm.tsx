@@ -22,7 +22,7 @@ export function LogInForm() {
     signInWithEmailAndPassword(auth, values.email, values.password)
       .then((res) => {
         if (res?.user) {
-          navigate('/');
+          navigate('/graphiql');
         }
       })
       .catch((err) => {

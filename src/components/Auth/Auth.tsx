@@ -7,7 +7,7 @@ export function Auth({ children }: { children: JSX.Element }) {
   const location = useLocation();
 
   if (!loading && !user) {
-    return <Navigate to={'/welcome'} state={{ from: location }} replace />;
+    return <Navigate to="/" state={{ from: location }} replace />;
   }
 
   return children;
