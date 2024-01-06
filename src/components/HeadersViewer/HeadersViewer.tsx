@@ -23,7 +23,6 @@ export function HeadersViewer() {
       label={dictionary.headers}
       multiline
       fullWidth
-      hidden={true}
       rows={rowsNumber}
       variant="filled"
       margin="normal"

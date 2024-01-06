@@ -17,27 +17,25 @@ export function DownsideWindowTabs() {
     };
   }
 
+  function getTab(index: number, label: string) {
+    return (
+      <Tab
+        label={label}
+        sx={{ color: 'var(--main-font-color)' }}
+        {...a11yProps(index)}
+      />
+    );
+  }
+
   const { dictionary } = useLanguage();
   const [value, setValue] = useState(0);
 
   return (
     <>
       <Tabs value={value} onChange={handleTabChange}>
-        <Tab
-          label={dictionary.headers}
-          sx={{ color: 'var(--main-font-color)' }}
-          {...a11yProps(0)}
-        />
-        <Tab
-          label={dictionary.variables}
-          sx={{ color: 'var(--main-font-color)' }}
-          {...a11yProps(1)}
-        />
-        <Tab
-          label={dictionary.hide}
-          sx={{ color: 'var(--main-font-color)' }}
-          {...a11yProps(2)}
-        />
+        {getTab(0, dictionary.headers)}
+        {getTab(1, dictionary.variables)}
+        {getTab(2, dictionary.hide)}
       </Tabs>
 
       <Box>
