@@ -22,7 +22,7 @@ export function DownsideWindowTabs() {
 
   return (
     <>
-      <Tabs value={value} onChange={handleTabChange} aria-label="">
+      <Tabs value={value} onChange={handleTabChange}>
         <Tab
           label={dictionary.headers}
           sx={{ color: 'var(--main-font-color)' }}
