@@ -1,6 +1,7 @@
 {
   "headerHere": "Здесь заголовок",
   "mainHere": "Здесь основная страница",
+  "language": "Язык",
   "changeLanguage": "Изменить язык",
   "titleErrorPage": "Упс!",
   "textErrorRoute": "Страница, которую Вы ищете, не может быть найдена",

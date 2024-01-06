@@ -1,18 +1,43 @@
 import { languageOptions } from '../../locales';
 import { useLanguage } from '../../hooks';
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+} from '@mui/material';
+
+const idLanguageSelectLabel = 'id-language-select-label';
+const idLanguageSelect = 'id-language-select';
 
 export function LanguageSelector() {
-  const { userLanguage, userLanguageChange } = useLanguage();
+  const { dictionary, userLanguage, userLanguageChange } = useLanguage();
 
-  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) =>
+  const handleLanguageChange = (e: SelectChangeEvent) =>
     userLanguageChange(e.target.value);
   return (
-    <select onChange={handleLanguageChange} value={userLanguage}>
-      {Object.entries(languageOptions).map(([id, name]) => (
-        <option key={id} value={id}>
-          {name}
-        </option>
-      ))}
-    </select>
+    <FormControl>
+      <InputLabel
+        sx={{ color: 'var(--label-font-color)' }}
+        id={idLanguageSelectLabel}
+      >
+        {dictionary.language}
+      </InputLabel>
+      <Select
+        labelId={idLanguageSelectLabel}
+        id={idLanguageSelect}
+        value={userLanguage}
+        label={dictionary.language}
+        onChange={handleLanguageChange}
+        sx={{ color: 'var(--main-font-color)' }}
+      >
+        {Object.entries(languageOptions).map(([id, name]) => (
+          <MenuItem key={id} value={id}>
+            {name}
+          </MenuItem>
+        ))}
+      </Select>
+    </FormControl>
   );
 }

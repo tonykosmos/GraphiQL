@@ -1,6 +1,7 @@
 {
   "headerHere": "Header",
   "mainHere": "Main",
+  "language": "Language",
   "changeLanguage": "Change language",
   "titleErrorPage": "Oops!",
   "textErrorRoute": "The page you are looking for cannot be found",
