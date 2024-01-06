@@ -13,12 +13,16 @@ export function Welcome() {
       <h1 className={classes.welcomeHeader}>
         {dictionary.welcomeToGraphiqlApp}
       </h1>
-      {user && (
+      {user ? (
         <p className={classes.descriptionLink}>
           {dictionary.descriptionLinkToExplorer}
           <Link className={classes.link} to="/graphiql">
             {dictionary.explorer}
           </Link>
+        </p>
+      ) : (
+        <p className={classes.descriptionLink}>
+          {dictionary.welcomeDescription}
         </p>
       )}
     </div>
