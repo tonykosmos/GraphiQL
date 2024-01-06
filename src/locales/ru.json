@@ -23,7 +23,7 @@
   "changeEndpoint": "Изменить конечную точку",
   "requestEditor": "Редактор Запроса",
   "responseViewer": "Результат",
-  "messageAPIEndpointsList": "Сообщение списка APIEndpoints",
+  "messageAPIEndpointsList": "Список конечных точек API запросов",
   "helpInformation": "Справочная информация",
   "startRequest": "Запуск запроса",
   "clearRequestParams": "Очистить параметры запроса",

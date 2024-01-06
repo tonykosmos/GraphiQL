@@ -23,7 +23,7 @@
   "changeEndpoint": "Change Endpoint",
   "requestEditor": "Request Editor",
   "responseViewer": "Response Viewer",
-  "messageAPIEndpointsList": "Message APIEndpoints List:",
+  "messageAPIEndpointsList": "APIEndpoints List:",
   "helpInformation": "Help information",
   "startRequest": "Start Request",
   "clearRequestParams": "Clear Request parameters",
