@@ -8,7 +8,7 @@ import { GraphiQLPage } from '../pages/GraphiQLPage';
 
 const routerConfig = [
   {
-    path: '',
+    path: '/',
     element: <AppLayout />,
     errorElement: <ErrorPage />,
     children: [
@@ -18,10 +18,10 @@ const routerConfig = [
     ],
   },
   {
-    path: '/',
+    path: '/graphiql',
     element: <AuthLayout />,
     errorElement: <ErrorPage />,
-    children: [{ path: '/graphiql', element: <GraphiQLPage /> }],
+    children: [{ path: '', element: <GraphiQLPage /> }],
   },
 ];
 
