@@ -20,7 +20,8 @@
 }
 
 .form {
-  margin-top: 10px;
+  margin-top: 200px;
+  margin-bottom: 200px;
   gap: 15px;
 }
 
@@ -45,4 +46,5 @@
 .formContainer {
   display: flex;
   justify-content: center;
+  min-height: 100vh;
 }

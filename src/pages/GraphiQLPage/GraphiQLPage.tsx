@@ -6,7 +6,7 @@ import { ControlPanel } from '../../components/ControlPanel';
 
 export function GraphiQLPage() {
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xl" sx={{ minHeight: '90vh' }}>
       <Box
         sx={{
           display: 'grid',

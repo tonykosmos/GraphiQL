@@ -43,11 +43,17 @@ export function Header() {
         {loading ? (
           ''
         ) : user ? (
-          <button onClick={doLogOut}>{dictionary.logOut}</button>
+          <button className={style.button} onClick={doLogOut}>
+            {dictionary.logOut}
+          </button>
         ) : (
-          <div className="flex">
-            <button onClick={goToLogInPage}>{dictionary.logIn}</button>
-            <button onClick={goToSignUpPage}>{dictionary.signUp}</button>
+          <div className={style.buttonsContainer}>
+            <button className={style.button} onClick={goToLogInPage}>
+              {dictionary.logIn}
+            </button>
+            <button className={style.button} onClick={goToSignUpPage}>
+              {dictionary.signUp}
+            </button>
           </div>
         )}
       </div>
