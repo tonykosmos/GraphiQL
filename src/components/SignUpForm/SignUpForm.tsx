@@ -19,7 +19,7 @@ export function SignUpForm() {
 
   const signUp = (values: signUpFields) => {
     registerWithEmailAndPassword(values.email, values.password).then(() => {
-      navigate('/');
+      navigate('/graphiql');
     });
   };
 

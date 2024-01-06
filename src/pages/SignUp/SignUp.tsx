@@ -10,7 +10,7 @@ export function SignUp() {
 
   useEffect(() => {
     if (user) {
-      navigate('/');
+      navigate('/graphiql');
     }
   }, [user, loading, navigate]);
 

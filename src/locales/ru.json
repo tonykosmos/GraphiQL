@@ -1,6 +1,7 @@
 {
   "headerHere": "Здесь заголовок",
   "mainHere": "Здесь основная страница",
+  "language": "Язык",
   "changeLanguage": "Изменить язык",
   "titleErrorPage": "Упс!",
   "textErrorRoute": "Страница, которую Вы ищете, не может быть найдена",
@@ -22,11 +23,14 @@
   "changeEndpoint": "Изменить конечную точку",
   "requestEditor": "Редактор Запроса",
   "responseViewer": "Результат",
-  "messageAPIEndpointsList": "Сообщение списка APIEndpoints",
+  "messageAPIEndpointsList": "Список конечных точек API запросов",
   "helpInformation": "Справочная информация",
   "startRequest": "Запуск запроса",
   "clearRequestParams": "Очистить параметры запроса",
   "prettifyRequest": "Приукрасить запрос",
   "documentation": "Документация",
-  "descriptionDocumentation": "Текст документации представлен в виде SDL строки"
+  "descriptionDocumentation": "Текст документации представлен в виде SDL строки",
+  "explorer": " Редактор",
+  "descriptionLinkToExplorer": "Чтобы воспользоваться GraphiQL редактором, воспользуйтесь ссылкой",
+  "welcomeDescription": "Чтобы воспользоваться GraphiQL explorer, необходимо быть авторизированным пользователем, для этого пройдите авторизацию, нажав кнопку 'Войти', или регистрацию, нажав кнопку 'Зарегистрироваться'"
 }

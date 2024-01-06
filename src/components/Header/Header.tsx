@@ -4,7 +4,7 @@ import style from './Header.module.css';
 import { useScrollPosition } from '../../hooks';
 import { auth, logout } from '../../utils/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export function Header() {
   const { dictionary } = useLanguage();
@@ -30,25 +30,30 @@ export function Header() {
         scrollPosition > 0 ? style.reducedHeader : ''
       }`}
     >
-      {/* TODO: Add link to the Welcome page */}
-      <a href="#" className={style.logoContainer}>
+      <Link to="/" className={style.logoContainer}>
         <img
           src="graphql.svg"
           alt={dictionary.logoApp}
           className={style.logo}
         />
         <span className={style.logoText}>GraphiQL</span>
-      </a>
+      </Link>
       <div className={style.controlContainer}>
         <LanguageSelector />
         {loading ? (
           ''
         ) : user ? (
-          <button onClick={doLogOut}>{dictionary.logOut}</button>
+          <button className={style.button} onClick={doLogOut}>
+            {dictionary.logOut}
+          </button>
         ) : (
-          <div className="flex">
-            <button onClick={goToLogInPage}>{dictionary.logIn}</button>
-            <button onClick={goToSignUpPage}>{dictionary.signUp}</button>
+          <div className={style.buttonsContainer}>
+            <button className={style.button} onClick={goToLogInPage}>
+              {dictionary.logIn}
+            </button>
+            <button className={style.button} onClick={goToSignUpPage}>
+              {dictionary.signUp}
+            </button>
           </div>
         )}
       </div>

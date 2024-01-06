@@ -1,6 +1,7 @@
 {
   "headerHere": "Header",
   "mainHere": "Main",
+  "language": "Language",
   "changeLanguage": "Change language",
   "titleErrorPage": "Oops!",
   "textErrorRoute": "The page you are looking for cannot be found",
@@ -22,11 +23,14 @@
   "changeEndpoint": "Change Endpoint",
   "requestEditor": "Request Editor",
   "responseViewer": "Response Viewer",
-  "messageAPIEndpointsList": "Message APIEndpoints List:",
+  "messageAPIEndpointsList": "APIEndpoints List:",
   "helpInformation": "Help information",
   "startRequest": "Start Request",
   "clearRequestParams": "Clear Request parameters",
   "prettifyRequest": "Prettify Request",
   "documentation": "Documentation",
-  "descriptionDocumentation": "The text of the documentation is presented in the form of an SDL string"
+  "descriptionDocumentation": "The text of the documentation is presented in the form of an SDL string",
+  "explorer": " Explorer",
+  "descriptionLinkToExplorer": "To use the GraphiQL explorer, use the link to the",
+  "welcomeDescription": "To use GraphiQL explorer, you must be an authorized user, to do this, log in by clicking the 'Log in' button, or register by clicking the 'Sign Up' button"
 }
