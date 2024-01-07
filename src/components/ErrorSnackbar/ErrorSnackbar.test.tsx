@@ -1,5 +1,4 @@
 import { render } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import { describe, expect, it } from 'vitest';
 import { ErrorSnackbar } from './index';
 import { BrowserRouter } from 'react-router-dom';

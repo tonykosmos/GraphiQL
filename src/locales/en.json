@@ -4,7 +4,7 @@
   "language": "Language",
   "changeLanguage": "Change language",
   "titleErrorPage": "Oops!",
-  "textErrorRoute": "The page you are looking for cannot be found",
+  "textErrorPage": "The page you are looking for cannot be found",
   "logoCourse": "Logo course",
   "logoApp": "Logo app",
   "sign": "Sign",
