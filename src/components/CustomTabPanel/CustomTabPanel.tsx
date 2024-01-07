@@ -12,6 +12,7 @@ export function CustomTabPanel(props: TabPanelProps) {
   return (
     <div
       role="tabpanel"
+      data-testid="custom-tab-panel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}

@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { Provider } from 'react-redux';
 import { store } from '../../store/store';
@@ -26,22 +26,23 @@ describe('Variables viewer tests', () => {
     expect(variablesTextField).toBeInTheDocument();
   });
 
-  // it('Should set variables into store', async () => {
-  //   render(
-  //     <BrowserRouter>
-  //       <ThemeProvider theme={customTheme}>
-  //         <LanguageProvider>
-  //           <Provider store={store}>
-  //             <VariablesViewer />
-  //           </Provider>
-  //         </LanguageProvider>
-  //       </ThemeProvider>
-  //     </BrowserRouter>
-  //   );
-  //   const variablesTextField: HTMLDivElement = screen.getByTestId('variables-editor-container');
-
-  //   console.log(variablesTextField.getElementsByTagName('textarea'));
-
-  //   expect(variablesTextField).toBeInTheDocument();
-  // });
+  it('Should set variables into store', async () => {
+    render(
+      <BrowserRouter>
+        <ThemeProvider theme={customTheme}>
+          <LanguageProvider>
+            <Provider store={store}>
+              <VariablesViewer />
+            </Provider>
+          </LanguageProvider>
+        </ThemeProvider>
+      </BrowserRouter>
+    );
+    const variablesTextField: HTMLDivElement = screen.getByTestId(
+      'variables-editor-container'
+    );
+    const mainTextArea = variablesTextField.getElementsByTagName('textarea')[0];
+    fireEvent.change(mainTextArea, { target: { value: '{"first": 2}' } });
+    expect(store.getState().queryData.variablesRequest).toBe('{"first": 2}');
+  });
 });
