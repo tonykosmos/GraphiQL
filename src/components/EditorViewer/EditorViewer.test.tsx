@@ -21,7 +21,6 @@ describe('Editor tests', () => {
         </ThemeProvider>
       </BrowserRouter>
     );
-    screen.debug();
 
     const editor = screen.getByText('Request Editor');
     expect(editor).toBeInTheDocument();
@@ -39,7 +38,6 @@ describe('Editor tests', () => {
         </ThemeProvider>
       </BrowserRouter>
     );
-    screen.debug();
 
     const editor = screen.getByText('Response Viewer');
     expect(editor).toBeInTheDocument();

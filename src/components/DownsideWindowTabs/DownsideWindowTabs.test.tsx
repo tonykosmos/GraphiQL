@@ -24,6 +24,4 @@ describe('Downside window tabs tests', () => {
     const tabs = screen.getByTestId('request-adds-tabs');
     expect(tabs).toBeInTheDocument();
   });
-
-  // fireEvent.click(prettifierButton);
 });
