@@ -8,8 +8,8 @@ import {
 } from '../../store/queryDataSlice/queryDataSlice';
 import { EditorViewerProps, MODE } from './types';
 
-const thirtyRows = 30;
-const fifteenRows = 15;
+const viewerRows = 36;
+const editorRows = 15;
 
 export function EditorViewer({ isViewer }: EditorViewerProps) {
   const { dictionary } = useLanguage();
@@ -32,7 +32,7 @@ export function EditorViewer({ isViewer }: EditorViewerProps) {
       multiline
       fullWidth
       disabled={isViewer}
-      rows={isViewer ? thirtyRows : fifteenRows}
+      rows={isViewer ? viewerRows : editorRows}
       variant="filled"
       margin="normal"
       value={isViewer ? response : bodyRequest}
