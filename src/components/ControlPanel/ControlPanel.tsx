@@ -121,7 +121,11 @@ export function ControlPanel() {
         </IconButton>
       </Tooltip>
       <Tooltip title={dictionary.prettifyRequest}>
-        <IconButton onClick={prettifyRequest} sx={{ marginTop: 1 }}>
+        <IconButton
+          onClick={prettifyRequest}
+          sx={{ marginTop: 1 }}
+          data-testid="prettify-button"
+        >
           <AutoFixHighIcon
             sx={{
               fontSize: 50,

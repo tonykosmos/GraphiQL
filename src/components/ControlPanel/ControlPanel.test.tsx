@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { describe, expect, it } from 'vitest';
 import { ControlPanel } from './index';
@@ -26,5 +26,22 @@ describe('Control panel tests', () => {
     expect(screen.getAllByTestId('DeleteIcon').length).toBe(1);
     expect(screen.getAllByTestId('AutoFixHighIcon').length).toBe(1);
     expect((await screen.findAllByRole('button')).length).toBe(3);
+  });
+
+  it('Should prettify request body', async () => {
+    render(
+      <BrowserRouter>
+        <ThemeProvider theme={customTheme}>
+          <LanguageProvider>
+            <Provider store={store}>
+              <ControlPanel />
+            </Provider>
+          </LanguageProvider>
+        </ThemeProvider>
+      </BrowserRouter>
+    );
+
+    const prettifyButton = screen.getByTestId('AutoFixHighIcon');
+    fireEvent.click(prettifyButton);
   });
 });
