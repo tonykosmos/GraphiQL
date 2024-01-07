@@ -1,5 +1,4 @@
-import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { Welcome } from './index';
 import { BrowserRouter } from 'react-router-dom';
@@ -10,18 +9,21 @@ import { customTheme } from '../../theme';
 import { store } from '../../store/store';
 
 describe('Welcome page tests', () => {
-  it('Should render Welcome page', () => {
-    render(
-      <BrowserRouter>
-        <ThemeProvider theme={customTheme}>
-          <LanguageProvider>
-            <Provider store={store}>
-              <Welcome />
-            </Provider>
-          </LanguageProvider>
-        </ThemeProvider>
-      </BrowserRouter>
+  it('Should render Welcome page', async () => {
+    await act(async () =>
+      render(
+        <BrowserRouter>
+          <ThemeProvider theme={customTheme}>
+            <LanguageProvider>
+              <Provider store={store}>
+                <Welcome />
+              </Provider>
+            </LanguageProvider>
+          </ThemeProvider>
+        </BrowserRouter>
+      )
     );
+
     expect(screen.getByText('Welcome to GraphiQL App')).toBeInTheDocument();
   });
 });
