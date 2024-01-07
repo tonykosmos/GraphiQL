@@ -1,7 +1,7 @@
-import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { describe, expect, it } from 'vitest';
-import { Welcome } from './index';
+import { EndpointInput } from './index';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import { LanguageProvider } from '../../providers';
@@ -9,20 +9,19 @@ import { Provider } from 'react-redux';
 import { customTheme } from '../../theme';
 import { store } from '../../store/store';
 
-describe('Welcome page tests', () => {
-  it('Should render Welcome page', () => {
+describe('Endpoint Input tests', () => {
+  it('Should render Endpoint Input', async () => {
     render(
       <BrowserRouter>
         <ThemeProvider theme={customTheme}>
           <LanguageProvider>
             <Provider store={store}>
-              <Welcome />
+              <EndpointInput />
             </Provider>
           </LanguageProvider>
         </ThemeProvider>
       </BrowserRouter>
     );
-    screen.debug();
-    expect(screen.getByText('Welcome to GraphiQL App')).toBeInTheDocument();
+    expect(screen.getByText('Change Endpoint')).toBeInTheDocument();
   });
 });
