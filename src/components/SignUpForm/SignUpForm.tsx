@@ -30,7 +30,7 @@ export function SignUpForm() {
   }
 
   return (
-    <div className={classes.formContainer}>
+    <div className={classes.formContainer} data-testid="sign-up-form">
       <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="email">
           {dictionary.email}:

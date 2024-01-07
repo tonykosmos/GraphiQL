@@ -19,7 +19,8 @@ export function VariablesViewer() {
   };
   return (
     <TextField
-      id={MODE.HEADERS_EDITOR}
+      id={MODE.VARIABLES_EDITOR}
+      data-testid="variables-editor-container"
       label={dictionary.variables}
       multiline
       fullWidth

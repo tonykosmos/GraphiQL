@@ -20,6 +20,7 @@ export function HeadersViewer() {
   return (
     <TextField
       id={MODE.HEADERS_EDITOR}
+      data-testid="headers-editor-container"
       label={dictionary.headers}
       multiline
       fullWidth
