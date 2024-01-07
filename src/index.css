@@ -1,0 +1,78 @@
+:root {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+
+  --main-font-color: #ffffff;
+  --main-font-hover-color: #b0b0b0;
+  --main-bg-color: #09161c;
+  --footer-bg-color: #222d33;
+  --error-message-color: #ff1313;
+
+  --TextField-border-color: #aaaaaa;
+  --TextField-border-hover-color: #7b7b7b;
+  --TextField-border-focused-color: #2a2a2a;
+  --label-font-color: #b0b0b0;
+  --label-font-focused-color: #808080;
+
+  --header-bg-color: #3a464d;
+  --header-small-bg-color: #46494b;
+
+  --link-text-color: #b0b0b0;
+  --link-text-hover-color: #808080;
+
+  --button-bg-color: #007fff;
+  --button-bg-hover-color: #0072e5;
+  --button-border-color: #007fff;
+  --button-text-color: #ffffff;
+
+  --spinner-border-color: #f3f3f3;
+  --spinner-border-top-color: #383636;
+
+  --helper-window-bg-color: #222d33;
+
+  --scrollbar-bg-color: #383636;
+  --scrollbar-track-box-shadow-color: #808080;
+  --scrollbar-thumb-bg-color: #616466;
+  --scrollbar-thumb-bg-hover-color: #535353;
+
+  --white: #ffffff;
+  --gray: #808080;
+  --green: #008000;
+  --brown: #a52a2a;
+
+  color: var(--main-font-color);
+  background-color: var(--main-bg-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  position: relative;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+  background: var(--scrollbar-bg-color);
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px var(--scrollbar-track-box-shadow-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg-color);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-bg-hover-color);
+}

@@ -1,0 +1,1 @@
+export { GraphiQLPage } from './GraphiQLPage';
