@@ -24,7 +24,7 @@ export function ErrorSnackbar() {
         errorDocumentation ? setDocumentationResponse('') : setQueryResponse('')
       );
     }
-  }, [errorDocumentation, errorRequest]);
+  }, [errorDocumentation, errorRequest, dispatch]);
 
   const closeWindow = (
     _event?: React.SyntheticEvent | Event,
