@@ -39,7 +39,7 @@ export function LogInForm() {
   }
 
   return (
-    <div className={classes.formContainer}>
+    <div className={classes.formContainer} data-testid="log-in-form">
       <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="email">
           {dictionary.email}:

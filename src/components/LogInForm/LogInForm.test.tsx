@@ -2,28 +2,27 @@ import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { Provider } from 'react-redux';
 import { store } from '../../store/store';
-import DownsideWindowTabs from './DownsideWindowTabs';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { customTheme } from '../../theme';
 import { LanguageProvider } from '../../providers';
+import { LogInForm } from './LogInForm';
 
-describe('Downside window tabs tests', () => {
-  it('Should render tabview for headers and variables editors', async () => {
+describe('Log in form tests', () => {
+  it('Should render log in form', async () => {
     render(
       <BrowserRouter>
         <ThemeProvider theme={customTheme}>
           <LanguageProvider>
             <Provider store={store}>
-              <DownsideWindowTabs />
+              <LogInForm />
             </Provider>
           </LanguageProvider>
         </ThemeProvider>
       </BrowserRouter>
     );
-    const tabs = screen.getByTestId('request-adds-tabs');
-    expect(tabs).toBeInTheDocument();
-  });
+    const logInForm = screen.getByTestId('log-in-form');
 
-  // fireEvent.click(prettifierButton);
+    expect(logInForm).toBeInTheDocument();
+  });
 });

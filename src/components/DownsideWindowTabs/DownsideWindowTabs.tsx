@@ -32,7 +32,11 @@ export function DownsideWindowTabs() {
 
   return (
     <>
-      <Tabs value={value} onChange={handleTabChange}>
+      <Tabs
+        value={value}
+        onChange={handleTabChange}
+        data-testid="request-adds-tabs"
+      >
         {getTab(0, dictionary.headers)}
         {getTab(1, dictionary.variables)}
         {getTab(2, dictionary.hide)}

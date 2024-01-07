@@ -43,5 +43,41 @@ describe('Control panel tests', () => {
 
     const prettifyButton = screen.getByTestId('AutoFixHighIcon');
     fireEvent.click(prettifyButton);
+
+    const requestBody = store.getState().queryData.bodyRequest;
+
+    expect(requestBody).toBe(
+      'query Planets { \n' +
+        ' \tallPlanets { \n' +
+        ' \t\ttotalCount \n' +
+        ' \t\tplanets { \n' +
+        ' \t\t\tname \n' +
+        ' \t\t} \n' +
+        ' \t} \n' +
+        ' } \n'
+    );
+  });
+
+  it('Should clear request and response windows', async () => {
+    render(
+      <BrowserRouter>
+        <ThemeProvider theme={customTheme}>
+          <LanguageProvider>
+            <Provider store={store}>
+              <ControlPanel />
+            </Provider>
+          </LanguageProvider>
+        </ThemeProvider>
+      </BrowserRouter>
+    );
+
+    const clearButton = screen.getByTestId('DeleteIcon');
+    fireEvent.click(clearButton);
+
+    const requestBody = store.getState().queryData.bodyRequest;
+    const responseBody = store.getState().queryData.response;
+
+    expect(requestBody).toBe('');
+    expect(responseBody).toBe('');
   });
 });
