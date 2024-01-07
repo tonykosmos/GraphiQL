@@ -22,7 +22,6 @@ describe('Welcome page tests', () => {
         </ThemeProvider>
       </BrowserRouter>
     );
-    screen.debug();
     expect(screen.getByText('Welcome to GraphiQL App')).toBeInTheDocument();
   });
 });

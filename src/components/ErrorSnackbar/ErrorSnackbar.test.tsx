@@ -23,19 +23,5 @@ describe('Error Snackbar tests', () => {
       </BrowserRouter>
     );
     expect(container.getElementsByTagName('div').length).toBe(0);
-    // expect(reducer(undefined, { type: '' })).toEqual({
-    //     documentationResponse: '',
-    //     isLoadingDocumentation: false,
-    //     errorDocumentation: '',
-    //   });
-    //   const action = {
-    //     type: documentationDataFetch.rejected,
-    //     payload: 'Error Fetch',
-    //   };
-    //   console.log(action)
-    // const element = await screen.findByText('Error Fetch');
-
-    // screen.debug(element);
-    //expect(await screen.findByText('GraphiQL')).toBeInTheDocument();
   });
 });

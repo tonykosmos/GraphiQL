@@ -18,10 +18,5 @@ describe('Language Selector tests', () => {
     const options = within(listbox).getAllByRole('option');
     const optionValues = options.map((li) => li.getAttribute('data-value'));
     expect(optionValues).toEqual(['en', 'ru']);
-    //fireEvent.click(await screen.findByRole('option', { name: 'Русский' }));
-    //fireEvent.click(within(listbox).getByText('Русский'));
-    //const elements = await screen.findAllByText('English');
-    //expect(elements).toHaveLength(0);
-    //screen.debug();
   });
 });

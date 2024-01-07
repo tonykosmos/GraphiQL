@@ -10,17 +10,4 @@ describe('Redux toolkit tests', () => {
       errorDocumentation: '',
     });
   });
-  // it('Should set value from documentationDataFetch', async () => {
-  //   expect(reducer(undefined, { type: '' })).toEqual({
-  //     documentationResponse: '',
-  //     isLoadingDocumentation: false,
-  //     errorDocumentation: '',
-  //   });
-  //   const action = {
-  //     type: documentationDataFetch.rejected,
-  //     payload: 'Error Fetch'
-  //   };
-  //   const result = reducer(undefined, action);
-  //   console.log(action);
-  // });
 });
