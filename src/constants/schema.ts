@@ -6,7 +6,7 @@ export const signUpSchema = yup.object({
     .string()
     .required('Required field')
     .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/,
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/,
       'Should contain 1 number, 1 uppercased letter, 1 lowercased letter, 1 special character'
     ),
   confirmPassword: yup
