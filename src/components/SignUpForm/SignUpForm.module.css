@@ -1,0 +1,50 @@
+.formInput,
+.formSelect {
+  width: 300px;
+  height: 30px;
+  font-size: 16px;
+}
+
+.formCheckbox {
+  font-size: 16px;
+  width: 19px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.form,
+.form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+.form {
+  margin-top: 200px;
+  margin-bottom: 200px;
+  gap: 15px;
+}
+
+.formBtn {
+  height: 30px;
+  width: 310px;
+  cursor: pointer;
+}
+
+.errorMessage {
+  font-size: 12px;
+  width: 300px;
+  color: var(--error-message-color);
+  height: 14px;
+}
+
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
