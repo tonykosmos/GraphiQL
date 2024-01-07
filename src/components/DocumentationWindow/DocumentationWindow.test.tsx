@@ -1,5 +1,4 @@
 import { fireEvent, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import { describe, expect, it, vi } from 'vitest';
 import DocumentationWindow from './index';
 import { BrowserRouter } from 'react-router-dom';

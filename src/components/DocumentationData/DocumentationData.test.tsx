@@ -1,5 +1,4 @@
 import { screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import { describe, expect, it } from 'vitest';
 import DocumentationData from './index';
 import { BrowserRouter } from 'react-router-dom';
