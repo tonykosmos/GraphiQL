@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { customTheme } from '../../theme';
 import { LanguageProvider } from '../../providers';
-import { LogInForm } from './LogInForm';
+import { LogInForm } from './index';
 
 describe('Log in form tests', () => {
   it('Should render log in form', async () => {

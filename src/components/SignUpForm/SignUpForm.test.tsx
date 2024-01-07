@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { customTheme } from '../../theme';
 import { LanguageProvider } from '../../providers';
-import { SignUpForm } from './SignUpForm';
+import { SignUpForm } from './index';
 
 describe('Sign up form tests', () => {
   it('Should render sign up form', async () => {

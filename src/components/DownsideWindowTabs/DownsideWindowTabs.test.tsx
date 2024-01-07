@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { Provider } from 'react-redux';
 import { store } from '../../store/store';
-import DownsideWindowTabs from './DownsideWindowTabs';
+import { DownsideWindowTabs } from './index';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { customTheme } from '../../theme';
